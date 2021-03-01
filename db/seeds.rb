@@ -75,3 +75,5 @@ puts "Creating Users"
     puts "\n#{user.id} - User Created - #{user.username}"
     puts "_" * 55
 end
+
+puts "Creating Medicines"
