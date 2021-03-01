@@ -4,10 +4,13 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :first_name, input_html: { placeholder: "ex: Raimundo", class: "form-control" } %>
+    <%= f.input :last_name, input_html: { placeholder: "ex: Nonato", class: "form-control" }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                input_html: { autocomplete: "email", placeholder: "ex: raimundo_nonato@gmail.com" }%>
+    <%= f.input :username, input_html: { placeholder: "ex: raimundo_nonato", class: "form-control" }%>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
