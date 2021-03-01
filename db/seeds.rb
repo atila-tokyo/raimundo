@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require 'open-uri'
+require 'csv'
 
 puts "Dropping Database"
 
@@ -60,7 +62,7 @@ user_emails.map!(&:downcase).uniq!
 
 # Creating users from seed
 puts "Creating Users"
-30.times do 
+5.times do 
     user_email = user_emails.sample
     user_email = user_emails.sample until (User.pluck(:email).exclude?(user_email))
 
@@ -77,3 +79,35 @@ puts "Creating Users"
 end
 
 puts "Creating Medicines"
+
+CSV.foreach(Rails.root.join('db/drugs_names_raw.csv'), headers: true, skip_blanks: true) do |row|
+    m = Medicine.new(name: row['drugName'])
+    m.save!
+    p m.name
+end
+
+possible_doses = [
+    'tbsp', 'pills', 'tsp',
+    'ml', 'mg', 'drops'
+]
+
+current_date = Time.now
+puts "Creating Reminders"
+
+5.times do 
+    user = User.all.sample
+    user = User.all.sample until (Reminder.pluck(:user_id).exclude?(user.id))
+    
+    reminder = Reminder.create!(
+        alarm_time: current_date,
+        title: Faker::Ancient.hero,
+        content: Faker::Lorem.sentence(word_count: 10),
+        user: user,
+        medicine: Medicine.all.sample,
+        medicine_dose: "#{rand(1..10)} #{possible_doses.sample}"
+    )
+
+    current_date += 1.day
+
+    puts "\n#{reminder.id} - Reminder Created"
+end

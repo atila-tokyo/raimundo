@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2021_03_01_180222) do
   enable_extension "plpgsql"
 
   create_table "medicines", force: :cascade do |t|
-    t.float "dose"
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -24,6 +23,8 @@ ActiveRecord::Schema.define(version: 2021_03_01_180222) do
 
   create_table "reminders", force: :cascade do |t|
     t.date "alarm_time"
+    t.string "medicine_dose"
+    t.string "title", null: false
     t.string "content"
     t.bigint "user_id", null: false
     t.bigint "medicine_id", null: false

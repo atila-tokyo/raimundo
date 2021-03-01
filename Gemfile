@@ -30,7 +30,6 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'faker'
 gem 'devise'
-gem 'pandas'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
