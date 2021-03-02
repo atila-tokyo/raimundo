@@ -1,2 +1,29 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="container">
+  <div class="cards">
+        <div class="card">
+            <%= image_tag "icons/good_morning-icon" %>
+            <h1 class="article-title">
+                Bom dia, <%= current_user.first_name.capitalize %>
+            </h1>
+        </div>
+        <div class="card">
+            <%= image_tag "icons/routine-icon" %>
+            <h1 class="article-title">
+                Sua rotina
+            </h1>
+        </div>
+        <div class="card">
+            <%= image_tag "icons/help-option-icon" %>
+            <h1 class="article-title">
+                Ajuda com o aplicativo
+            </h1>
+        </div>
+        <div class="card">
+            <%= image_tag "icons/menu-icon" %>
+            <h1 class="article-title">
+                Mais opções (menu)
+            </h1>
+        </div>
+    </div>
+</div>
