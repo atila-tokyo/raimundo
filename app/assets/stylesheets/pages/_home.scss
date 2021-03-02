@@ -117,6 +117,13 @@
   font-family: "Copper Black", sans-serif;
 }
 //----------//
+// Login button and Sign Up align text
+.home-buttons a {
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
 
 //-----Home Page Body-----//
 
@@ -172,8 +179,17 @@
 
 // Home page footer
 .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #1D5063;
   padding: 40px;
+
+}
+
+.footer .links-footer {
+   justify-content: center;
 }
 
 .footer-text {

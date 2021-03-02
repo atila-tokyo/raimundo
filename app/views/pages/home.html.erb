@@ -6,10 +6,10 @@
         <h2 class="home-subtitle">Descomplique-se, viva mais!</h2>
         <h3 class="img-home"><%= image_tag "home-img" %></h3>
         <div class="home-buttons justify-content-between">
-            <button type="button" class="sign-up-btn btn btn-primary btn-lg">Cadastre-se</button>
-            <button type="button" class="login-btn btn btn-primary btn-lg">Entrar</button>
+            <%= link_to "Cadastrar", new_user_registration_path, class: "sign-up-btn btn btn-primary btn-lg" %>
+            <%= link_to "Entrar", new_user_session_path, class: "login-btn btn btn-primary btn-lg" %>
         </div>
-        </div>
+    </div>
 
     <%# Home page content (opportunity cards) %>
     <div class="home-content">
@@ -36,18 +36,20 @@
 
     <%# Home page footer %>
     <div class="footer">
-        <div class="links">
-        <a href="#">
-            <i class="fab fa-fw fa-facebook-f">
-            </i>
-        </a>
-        <a href="#">
-            <i class="fab fa-fw fa-twitter"></i>
-        </a>
-        <a href="#">
-            <i class="fab fa-fw fa-instagram"></i>
-        </a>
-        <p class="footer-text d-flex">Fique por dentro e nos siga nas redes sociais!</p>
+        <div class="links-footer">
+            <a href="#">
+                <i class="fab fa-fw fa-facebook-f">
+                </i>
+            </a>
+            <a href="#">
+                <i class="fab fa-fw fa-twitter"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-fw fa-instagram"></i>
+            </a>
+        </div>
+        <div class="text-footer">
+            <p class="footer-text d-flex">Fique por dentro e nos siga nas redes sociais!</p>
         </div>
     </div>
     </div>
@@ -55,9 +57,9 @@
   
 <% if user_signed_in? %>
 <div class="container">
-    <div class="cards">
+    <div class="cards-logged">
             <%= link_to "", class: "card-link" do %>
-                <div class="card">
+                <div class="card-logged">
                     <i class="fas fa-coffee card-icon"></i>
                 
                     <h1 class="article-title">
@@ -66,7 +68,7 @@
                 </div>
             <% end %>
             <%= link_to reminders_path, class: "card-link" do %>
-                <div class="card">
+                <div class="card-logged">
                     <i class="far fa-calendar-alt card-icon"></i>
                     <h1 class="article-title">
                         Sua rotina
@@ -74,7 +76,7 @@
                 </div>
             <% end %>
             <%= link_to "", class: "card-link" do %>
-                <div class="card">
+                <div class="card-logged">
                     <i class="fas fa-question card-icon"></i>
                     <h1 class="article-title">
                         Ajuda com o aplicativo
@@ -82,7 +84,7 @@
                 </div>
             <% end %>
             <%= link_to "", class: "card-link" do %>
-                <div class="card">
+                <div class="card-logged">
                     <i class="fas fa-bars card-icon"></i>
                     <h1 class="article-title">
                         Mais opções (menu)
