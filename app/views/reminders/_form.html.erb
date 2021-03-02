@@ -1,0 +1,12 @@
+<%= simple_form_for reminder do |f| %>
+    <%= f.input :title, label: "Título", placeholder: "Médico Cardiologista" %>
+    <%= f.input :alarm_time, label: 'Horário do Alarme: '%><br>
+    <%= f.input :content, as: :text, placeholder: "Se quiser, escreva alguns detalhes do seu lembrete", input_html: { rows: 5 } %>
+    <%= f.input :medicine_dose %>
+    
+    
+    <div class="d-flex justify-content-between">
+      <%= f.submit class: 'btn btn-success mt-2 mb-5 mr-5 w-50' %>
+      <%= link_to "Back to Home",  root_path, class: 'btn btn-primary mt-2 mb-5'  %>
+    </div>
+<% end %>

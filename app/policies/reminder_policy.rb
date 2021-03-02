@@ -5,9 +5,7 @@ class ReminderPolicy < ApplicationPolicy
     end
   end
 
-  def index?
-    #    # - reminder: the reminder passed to the `authorize` method in controller
-    # - user:   the `current_user` signed in with Devise.
-    record.user == user
+  def create?
+    true
   end
 end
