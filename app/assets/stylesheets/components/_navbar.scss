@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: linear-gradient(90deg, #2BC0E4 0%, #6A75D5 100%);
+  list-style-type: none;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +9,44 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 2.5em;
+  border-right: 5px solid #FFFFFF;
+}
+
+.nav-item {
+  padding-left: 1em;
+}
+
+.navbar-nav .nav-link {
+  padding-top: .8em;
+  &:hover {
+    border-bottom: 2px solid #FFFFFF;
+  }
+}
+
+.icon .fa-2x {
+  font-size: 3em;
+  color: #FFFFFF;
+}
+
+.navbar-nav .nav-link .icon {
+  padding-top: .1em;
+  color: #FFFFFF;
+}
+
+.nav-avatar-vertical-line {
+  display: inline-flex;
+  
+}
+// avatar border right
+.divider-right {
+  padding-left: 1em;
+  border-right: .2em solid #FFFFFF;
+  height: 4em;
+}
+
+// user name nav-bar
+.user-name h2 {
+  padding-top: .4em;
+  padding-left: .2em;
 }
