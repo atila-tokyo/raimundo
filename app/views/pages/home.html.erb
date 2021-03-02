@@ -1,55 +1,57 @@
-<%# Home page banner %>
-<div id="banner-welcome">
-    <div class="home-banner">
-      <h1 class="home-title"><strong>Raimundo</strong></h1>
-      <h2 class="home-subtitle">Descomplique-se, viva mais!</h2>
-      <h3 class="img-home"><%= image_tag "home-img" %></h3>
-      <div class="home-buttons justify-content-between">
-        <button type="button" class="sign-up-btn btn btn-primary btn-lg">Cadastre-se</button>
-        <button type="button" class="login-btn btn btn-primary btn-lg">Entrar</button>
-      </div>
+<% unless user_signed_in? %>
+    <%# Home page banner %>
+    <div id="banner-welcome">
+        <div class="home-banner">
+        <h1 class="home-title"><strong>Raimundo</strong></h1>
+        <h2 class="home-subtitle">Descomplique-se, viva mais!</h2>
+        <h3 class="img-home"><%= image_tag "home-img" %></h3>
+        <div class="home-buttons justify-content-between">
+            <button type="button" class="sign-up-btn btn btn-primary btn-lg">Cadastre-se</button>
+            <button type="button" class="login-btn btn btn-primary btn-lg">Entrar</button>
+        </div>
+        </div>
+
+    <%# Home page content (opportunity cards) %>
+    <div class="home-content">
+        <div class="container home-content">
+        <h2 class="oportunidades text-center">Oportunidades</h2>
+        <div class="cards">
+        <div class="card">
+            <%= image_tag "undraw_medical_care_movn" %>
+            <h4 class="card-title">Se organize facilmente</h4>
+            <p class="card-subtitle">Nunca mais esqueça de tomar seus remédios!</p>
+        </div>
+        <div class="card">
+            <%= image_tag "undraw_moments" %>
+            <h4 class="card-title">Reveja as fotos da família</h4>
+            <p class="card-subtitle">Tenha os momentos mais especiais na palma da mão</p>
+        </div>
+        <div class="card">
+            <%= image_tag "undraw_gradma" %>
+            <h4 class="card-title">Mantenha contato!</h4>
+            <p class="card-subtitle">Facilmente converse com amigos e família por meio de mensagens de forma simples e prática</p>
+        </div>
+        </div>
     </div>
 
-  <%# Home page content (opportunity cards) %>
-  <div class="home-content">
-    <div class="container home-content">
-    <h2 class="oportunidades text-center">Oportunidades</h2>
-    <div class="cards">
-      <div class="card">
-        <%= image_tag "undraw_medical_care_movn" %>
-        <h4 class="card-title">Se organize facilmente</h4>
-        <p class="card-subtitle">Nunca mais esqueça de tomar seus remédios!</p>
-      </div>
-      <div class="card">
-        <%= image_tag "undraw_moments" %>
-        <h4 class="card-title">Reveja as fotos da família</h4>
-        <p class="card-subtitle">Tenha os momentos mais especiais na palma da mão</p>
-      </div>
-      <div class="card">
-        <%= image_tag "undraw_gradma" %>
-        <h4 class="card-title">Mantenha contato!</h4>
-        <p class="card-subtitle">Facilmente converse com amigos e família por meio de mensagens de forma simples e prática</p>
-      </div>
+    <%# Home page footer %>
+    <div class="footer">
+        <div class="links">
+        <a href="#">
+            <i class="fab fa-fw fa-facebook-f">
+            </i>
+        </a>
+        <a href="#">
+            <i class="fab fa-fw fa-twitter"></i>
+        </a>
+        <a href="#">
+            <i class="fab fa-fw fa-instagram"></i>
+        </a>
+        <p class="footer-text d-flex">Fique por dentro e nos siga nas redes sociais!</p>
+        </div>
     </div>
-  </div>
-
-  <%# Home page footer %>
-  <div class="footer">
-    <div class="links">
-      <a href="#">
-        <i class="fab fa-fw fa-facebook-f">
-        </i>
-      </a>
-      <a href="#">
-        <i class="fab fa-fw fa-twitter"></i>
-      </a>
-      <a href="#">
-        <i class="fab fa-fw fa-instagram"></i>
-      </a>
-      <p class="footer-text d-flex">Fique por dentro e nos siga nas redes sociais!</p>
     </div>
-  </div>
-</div>
+<% end %>
   
 <% if user_signed_in? %>
 <div class="container">
