@@ -1,51 +1,54 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<% unless user_signed_in? %>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon flex-row-reverse">
+<% end %>
   <% if user_signed_in? %>
-    <div class="nav-item mr-auto nav-avatar-vertical-line">
-      <li class="nav-item dropdown">
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <div class="nav-item mr-auto nav-avatar-vertical-line">
+        <li class="nav-item dropdown">
 
-        <%= image_tag "https://imgur.com/gujVwpV.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          
-        <div class="dropdown" aria-labelledby="navbarDropdown">
-          <div class="dropdown-menu">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <div class="dropdown-divider"></div>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          <%= image_tag "https://imgur.com/gujVwpV.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            
+          <div class="dropdown" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </div> 
+        
+        </li>
+          <div class="nav-item user-name">
+            <h2><%= current_user.first_name.capitalize %></h2>
           </div>
-        </div> 
-      
-      </li>
-        <div class="nav-item user-name">
-          <h2><%= current_user.first_name.capitalize %></h2>
-        </div>
-        <div class="nav-item divider-right collapse navbar-collapse"></div>
+          <div class="nav-item divider-right collapse navbar-collapse"></div>
+      </div>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Home", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Messages", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item icon">
+            <%= link_to "#", class: "nav-link-icon" do %>
+              <i class="far fa-plus-square fa-2x"></i>
+            <% end %>
+          </li>
+        <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+        <% end %>
+      </ul>
     </div>
-  <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item icon">
-          <%= link_to "#", class: "nav-link-icon" do %>
-            <i class="far fa-plus-square fa-2x"></i>
-          <% end %>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
   </div>
-</div>
