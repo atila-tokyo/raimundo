@@ -56,30 +56,39 @@
 <% if user_signed_in? %>
 <div class="container">
     <div class="cards">
-            <div class="card">
-                <span class="iconify" data-icon="emojione-monotone:sun-with-face" data-inline="false"></span>
-                <h1 class="article-title">
-                    Bom dia, <%= current_user.first_name.capitalize %>
-                </h1>
-            </div>
-            <div class="card">
-                <span class="iconify" data-icon="fluent:calendar-clock-16-regular" data-inline="false"></span>
-                <h1 class="article-title">
-                    Sua rotina
-                </h1>
-            </div>
-            <div class="card">
-                <span class="iconify" data-icon="ic:outline-help-center" data-inline="false"></span>
-                <h1 class="article-title">
-                    Ajuda com o aplicativo
-                </h1>
-            </div>
-            <div class="card">
-                <span class="iconify" data-icon="gg:menu-boxed" data-inline="false"></span>
-                <h1 class="article-title">
-                    Mais opções (menu)
-                </h1>
-            </div>
+            <%= link_to "", class: "card-link" do %>
+                <div class="card">
+                    <i class="fas fa-coffee card-icon"></i>
+                
+                    <h1 class="article-title">
+                        Bom dia, <%= current_user.first_name.capitalize %>
+                    </h1>
+                </div>
+            <% end %>
+            <%= link_to reminders_path, class: "card-link" do %>
+                <div class="card">
+                    <i class="far fa-calendar-alt card-icon"></i>
+                    <h1 class="article-title">
+                        Sua rotina
+                    </h1>
+                </div>
+            <% end %>
+            <%= link_to "", class: "card-link" do %>
+                <div class="card">
+                    <i class="fas fa-question card-icon"></i>
+                    <h1 class="article-title">
+                        Ajuda com o aplicativo
+                    </h1>
+                </div>
+            <% end %>
+            <%= link_to "", class: "card-link" do %>
+                <div class="card">
+                    <i class="fas fa-bars card-icon"></i>
+                    <h1 class="article-title">
+                        Mais opções (menu)
+                    </h1>
+                </div>
+            <% end %>
         </div>
     </div>
 <% end %>
