@@ -129,12 +129,14 @@
 
 .home-content {
   margin-top: 125px;
+  // #eb8920 #FF9C33
   background-color: #FF9C33;
   border: 5px rgb(230,230,230);
+  
 }
 
 // Content title
-.oportunidades {
+.opportunities {
   color: #f1f1f1;
   padding-top: 50px;
   margin-bottom: 70px;
@@ -150,7 +152,8 @@
 }
 
 .card p {
-  opacity: .5;
+  opacity: .6;
+  font-weight: bolder;
 }
 
 .card {
@@ -160,6 +163,7 @@
   text-align: center;
   padding: 20px;
   border: 1px solid rgb(230,230,230);
+  background: linear-gradient(90deg, #ffa751 0%, #ffe259 95.31%);
 }
 
 .cards {
@@ -170,6 +174,7 @@
 }
 
 .card-title {
+  font-weight: bold;
   margin-top: 20px;
 }
 
@@ -190,6 +195,25 @@
 
 .footer .links-footer {
    justify-content: center;
+}
+
+.links-footer a {
+   color: #FF9C33;
+   font-size: 2em;
+   text-decoration: none;
+
+   &:hover {
+      color: #eb8920;
+      text-decoration: none;
+   }
+}
+
+
+.grow {
+    transition: all .2s ease-in-out;
+    &:hover {
+      transform: scale(1.5);
+    }
 }
 
 .footer-text {
