@@ -22,8 +22,13 @@
 
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 36em) {
-
+@media (min-width: 20em) {
+    .navbar-nav .nav-link {
+        margin-left: 1em;
+    }
+    .nav-link-icon {
+        margin-left: 1em;
+    }
 }
 
 // Medium devices (tablets, 768px and up)

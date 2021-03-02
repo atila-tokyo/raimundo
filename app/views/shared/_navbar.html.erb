@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <% if user_signed_in? %>
-    <div class="nav-avatar-vertical-line">
+    <div class="nav-item mr-auto nav-avatar-vertical-line">
       <li class="nav-item dropdown">
 
         <%= image_tag "https://imgur.com/gujVwpV.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -18,7 +18,7 @@
         <div class="nav-item user-name">
           <h2><%= current_user.first_name.capitalize %></h2>
         </div>
-        <div class="divider-right"></div>
+        <div class="nav-item divider-right"></div>
     </div>
   <% end %>
 
