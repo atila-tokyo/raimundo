@@ -3,27 +3,42 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: 100vh;
-    
-
+    overflow-x: hidden;
 }
 
-.box1 {
-    padding: 2em;
-
+.box1 { 
+   
+    h2, h3 {
+        color: white;
+    }
 }
 
 .box2 {
     background: linear-gradient(90deg, #FFA751 0%, #FFE259 95.31%);
     width: 50%;
     height: 100vh;
-    
-    
-
 }
-.sign-up-form-btn{
+
+
+
+.simple_form.new_user {
+    display: flex;
+    flex-direction: column;
+    width: 75%; 
+}
+
+.sign-up-form-btn {
+    margin-top: 2.5em;
     background-color: #26B6B6;
-    border-radius: 3em;
-}
+    border-radius: 1em;
+    padding: .5em 2em;
 
+    font-size: 2em;
+    font-weight: bold;
+
+    &:hover {
+        background-color: #237e7e;
+    }
+}
