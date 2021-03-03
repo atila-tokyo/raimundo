@@ -1,14 +1,27 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
+  protect_from_forgery with: :exception
+
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name username])
+    # added_attrs = %i[username email password password_confirmation remember_me]
+    # devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+    # devise_parameter_sanitizer.permit :sign_in, keys: %i[login password]
+    # devise_parameter_sanitizer.permit :account_update, keys: added_attrs
 
-    # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+    # devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name username])
+
+    # # For additional in app/views/devise/registrations/edit.html.erb
+    # devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+    devise_parameter_sanitizer.permit(:sign_up,
+                                      keys: %i[username first_name last_name email password password_confirmation])
+    devise_parameter_sanitizer.permit(:sign_in,
+                                      keys: %i[login email password password_confirmation])
+    devise_parameter_sanitizer.permit(:account_update,
+                                      keys: %i[username email password_confirmation current_password])
   end
 
   include Pundit
