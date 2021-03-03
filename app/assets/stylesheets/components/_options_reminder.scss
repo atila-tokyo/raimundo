@@ -1,35 +1,56 @@
-.category-wrapper {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+// --- Reminders New - Form --- //
+
+//btn-create, btn-back
+
+// Page title
+.reminder-title {
+  margin-bottom: 1.5em;
+  font-family: "Kameron", serif;
+  font-weight: bold;
+  color: #f1f1f1;
 }
 
-.category-item {
-  flex: 0 0 30%;
-  margin-right: .5em;
+// Option tabs (Event or medication)
+.nav-tabs {
+  margin-bottom: 1em;
 }
 
-.category-selector {
-  position: absolute;
-  transform: scale(0);
+#myTab {
+  border-bottom: none;
 }
 
-.category-selector + label {
-  display: block;
-  cursor: pointer;
-  box-sizing: border-box;
-  width: 100%;
-  font-size: 12px;
-  text-align: left;
-  padding: 10px 10px 30px 10px;
-  border: 1px solid #EAEAEA;
-  border-radius: 4px;
-  background-color: whitesmoke;
+// Specific tabs
+#event-tab, #medicine-tab {
+  border-color: #f1f1f1;
+  border-radius: 25px;
+  color: rgb(68, 67, 67);
 }
 
-.category-selector:checked + label {
-  color: white !important;
+a.active {
+  background: linear-gradient(90deg, #f3b16e 0%, #e7a848 95.31%) !important;
+  color: #f1f1f1 !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+  border-color: #FF9C33 !important;
+  box-shadow: 2px 2px 1px 1px #888888 !important;
 }
+
+
+
+// Label for reminder inputs
+.string.required, .date.optional, .text.required {
+  color: rgb(68, 67, 67);
+}
+
+// "Back to profile" and "Create" buttons
+.btn-back {
+  width: 200px;
+}
+
+.btn-create:hover {
+  background-color: #08c26e;
+}
+
 
 
 #option_category_evento + label {
