@@ -1,0 +1,64 @@
+.category-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.category-item {
+  flex: 0 0 30%;
+  margin-right: .5em;
+}
+
+.category-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.category-selector + label {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+  padding: 10px 10px 30px 10px;
+  border: 1px solid #EAEAEA;
+  border-radius: 4px;
+  background-color: whitesmoke;
+}
+
+.category-selector:checked + label {
+  color: white !important;
+}
+
+
+#option_category_evento + label {
+  color:#e99e2dfe;
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid #e99e2dfe;
+}
+
+#option_category_evento:checked + label {
+  background-color: #e99e2dfe;
+  border-color: #e99e2dfe;
+}
+
+
+#option_category_medicamento + label {
+  color: #FD1015;
+  text-align: center;
+  border: 2px solid #FD1015;
+}
+
+#option_category_medicamento:checked + label {
+  background-color: #FD1015;
+  border-color: #FD1015;
+}
+
+label.form-check-label.collection_radio_buttons {
+    width: 10em;
+    height: 3em;
+    font-weight: bold;
+    font-size: 1em;
+}
