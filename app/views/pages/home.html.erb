@@ -12,46 +12,53 @@
     </div>
 
     <%# Home page content (opportunity cards) %>
-    <div class="home-content">
-        <div class="container home-content">
-        <h2 class="opportunities text-center">Oportunidades</h2>
-        <div class="cards">
-        <div class="card">
-            <%= image_tag "undraw_medical_care_movn" %>
-            <h4 class="card-title">Se organize facilmente</h4>
-            <p class="card-subtitle">Nunca mais esqueça de tomar seus remédios!</p>
-        </div>
-        <div class="card">
-            <%= image_tag "undraw_moments" %>
-            <h4 class="card-title">Reveja as fotos da família</h4>
-            <p class="card-subtitle">Tenha os momentos mais especiais na palma da mão</p>
-        </div>
-        <div class="card">
-            <%= image_tag "undraw_gradma" %>
-            <h4 class="card-title">Mantenha contato!</h4>
-            <p class="card-subtitle">Facilmente converse com amigos e família por meio de mensagens de forma simples e prática</p>
-        </div>
-        </div>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kameron:wght@700&display=swap" rel="stylesheet">
+
+    <div class="home-content-layout">
+      <div class="home-content">
+          <div class="container home-content">
+          <h2 class="opportunities text-center">Oportunidades</h2>
+          <div class="cards">
+          <div class="card">
+              <%= image_tag "undraw_medical_care_movn" %>
+              <h4 class="card-title">Se organize facilmente</h4>
+              <p class="card-subtitle">Nunca mais esqueça de tomar seus remédios!</p>
+          </div>
+          <div class="card">
+              <%= image_tag "undraw_moments" %>
+              <h4 class="card-title">Reveja as fotos da família</h4>
+              <p class="card-subtitle">Tenha os momentos mais especiais na palma da mão.</p>
+          </div>
+          <div class="card">
+              <%= image_tag "undraw_gradma" %>
+              <h4 class="card-title">Mantenha contato!</h4>
+              <p class="card-subtitle">Converse com amigos e família por meio de mensagens de forma simples e prática.</p>
+          </div>
+          </div>
+      </div>
     </div>
 
     <%# Home page footer %>
-    <div class="footer">
-        <div class="links-footer">
-            <a href="#">
-                <i class="fab fa-fw fa-facebook-f grow">
-                </i>
-            </a>
-            <a href="#">
-                <i class="fab fa-fw fa-twitter grow"></i>
-            </a>
-            <a href="#">
-                <i class="fab fa-fw fa-instagram grow"></i>
-            </a>
-        </div>
-        <div class="text-footer">
-            <p class="footer-text d-flex">Fique por dentro e nos siga nas redes sociais!</p>
-        </div>
-    </div>
+    <div class="home-content-layout">
+      <div class="footer">
+          <div class="links-footer">
+              <a href="#">
+                  <i class="fab fa-fw fa-facebook-f grow">
+                  </i>
+              </a>
+              <a href="#">
+                  <i class="fab fa-fw fa-twitter grow"></i>
+              </a>
+              <a href="#">
+                  <i class="fab fa-fw fa-instagram grow"></i>
+              </a>
+          </div>
+          <div class="text-footer">
+              <p class="footer-text d-flex">Fique por dentro e nos siga nas redes sociais!</p>
+          </div>
+      </div>
+      </div>
     </div>
 <% end %>
   
