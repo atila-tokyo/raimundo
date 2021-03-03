@@ -15,7 +15,7 @@ class RemindersController < ApplicationController
     @reminder.medicine_dose = dose_format(params.dig(:reminder, :medicine_dose), params[:search_choice])
     @reminder.user = current_user
     @reminder.medicine = find_medicine
-    
+
     if @reminder.save
       redirect_to reminders_path
     else
