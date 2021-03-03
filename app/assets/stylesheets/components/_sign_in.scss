@@ -4,6 +4,17 @@
     align-items: center;
     height: 100%;
     width: 100vh;
+    overflow-x: hidden;
+
+}
+
+
+.box1 { 
+ margin-bottom: 12em;
+
+    h1, h2 {
+        color: white;
+    }
 }
 
 .sign-in-form-btn {
