@@ -1,0 +1,20 @@
+.container-sign-in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100vh;
+}
+
+.sign-in-form-btn {
+    margin-top: 2.5em;
+    background-color: #26B6B6;
+    border-radius: 1em;
+    padding: .5em 2em;
+    font-size: 2em;
+    font-weight: bold;
+
+    &:hover {
+        background-color: #237e7e;
+    }
+}
