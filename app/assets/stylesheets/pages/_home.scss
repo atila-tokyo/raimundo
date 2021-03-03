@@ -112,6 +112,11 @@
   border-color: #eb8920;
 }
 
+.sign-up-btn:active:focus {
+  background-color: #eb8920 !important;
+  border-color: #eb8920 !important;
+}
+
 // Login button 
 .login-btn {
   margin-left: 15px;
