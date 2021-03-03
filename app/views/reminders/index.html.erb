@@ -1,6 +1,18 @@
 
-<% @reminders.each do |r|%>
-<h1>
-    <%= r.title %>
-</h1>
+<ul>
+    <% @reminders.each do |reminder|%>
+        <li>
+            <h2><%= reminder.title %><h2>
+            <h3>Hora do Alarme: <%= reminder.alarm_time %><h3>
+            <h3>Descrição: <%= reminder.content %><h3>
+            <h3>Medicação: <%= reminder.medicine_dose %></h3>
+        </li>
+    <% end %>
+</ul>
+
+<h1>Todos os seus medicamentos: </h1>
+<% @current_user.medicines.each do |reminder|%>
+    <h1>
+        <%= reminder.name %> 
+    </h1>
 <% end %>

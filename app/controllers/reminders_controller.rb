@@ -13,7 +13,9 @@ class RemindersController < ApplicationController
   def create
     @reminder = Reminder.new(reminder_params)
     @reminder.medicine_dose = dose_format(params.dig(:reminder, :medicine_dose), params[:search_choice])
-
+    @reminder.user = current_user
+    @reminder.medicine = find_medicine
+    
     if @reminder.save
       redirect_to reminders_path
     else
@@ -41,5 +43,9 @@ class RemindersController < ApplicationController
     else
       "#{medicine_name} - #{dose_params[:medicine_quantity]} #{dose_params[:medicine_unity]}"
     end
+  end
+
+  def find_medicine
+    Medicine.find_by_name(params[:search_choice])
   end
 end
