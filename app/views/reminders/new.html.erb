@@ -1,5 +1,17 @@
 <div class="container d-flex flex-column align-items-center justify-center pt-5">
     <h2 class="reminder-title">Crie seu Lembrete</h2>
+
+    <%= simple_form_for :option do |f| %>
+        <%= f.input :category,
+            as: :radio_buttons,
+            collection_wrapper_tag: "div",
+            collection_wrapper_class: "category-wrapper",
+            item_wrapper_class: "category-item",
+            input_html: { class: "category-selector" },
+            collection: Reminder::OPTIONS,
+            label: "Categoria"
+        %>
+    <% end %>
     <div class="container w-50">
         <%= render 'form', reminder: @reminder %>
     </div>
