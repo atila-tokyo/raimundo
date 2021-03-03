@@ -12,17 +12,29 @@
     </ul>
         <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade" id="event" role="tabpanel" aria-labelledby="event-tab">
-            
+            <ul>
+                <% @reminders.each do |reminder|%>
+                    <% unless reminder.medicine.present? %>    
+                        <li>
+                            <h2><%= reminder.title %><h2>
+                            <h3>Hora do Alarme: <%= reminder.alarm_time %><h3>
+                            <h3>Descrição: <%= reminder.content %><h3>
+                        </li>
+                    <% end %> 
+                <% end %>
+            </ul>
         </div>
         <div class="tab-pane fade show active" id="medicine" role="tabpanel" aria-labelledby="medicine-tab">
             <ul>
                 <% @reminders.each do |reminder|%>
-                    <li>
-                        <h2><%= reminder.title %><h2>
-                        <h3>Hora do Alarme: <%= reminder.alarm_time %><h3>
-                        <h3>Descrição: <%= reminder.content %><h3>
-                        <h3>Medicação: <%= reminder.medicine_dose %></h3>
-                    </li>
+                    <% if reminder.medicine.present? %>    
+                        <li>
+                            <h2><%= reminder.title %><h2>
+                            <h3>Hora do Alarme: <%= reminder.alarm_time %><h3>
+                            <h3>Descrição: <%= reminder.content %><h3>
+                            <h3>Medicação: <%= reminder.medicine_dose %></h3>
+                        </li>
+                    <% end %> 
                 <% end %>
             </ul>
 
@@ -31,7 +43,7 @@
                     <h1>
                         <%= medicine.name %> 
                     </h1>
-                <% end %>
+                <% end %>               
             </div>
         </div>
     </div>

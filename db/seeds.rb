@@ -60,6 +60,15 @@ end
 
 user_emails.map!(&:downcase).uniq!
 
+puts "Creating Raimundo"
+User.create!(
+        email: "raimundo@gmail.com",
+        password: some_easy_passwords,
+        first_name: "raimundo",
+        last_name: "brown",
+        username: "raimundo".downcase
+    )
+
 # Creating users from seed
 puts "Creating Users"
 5.times do 

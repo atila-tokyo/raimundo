@@ -15,7 +15,7 @@ class RemindersController < ApplicationController
     unless params[:search_choice].nil?
       @reminder.medicine_dose = dose_format(params.dig(:reminder, :medicine_dose), params[:search_choice])
       @reminder.medicine = find_medicine
-    end  
+    end
     @reminder.user = current_user
 
     if @reminder.save

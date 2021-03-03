@@ -11,11 +11,11 @@
         
     </ul>
         <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade " id="event" role="tabpanel" aria-labelledby="event-tab">
-            <%= render 'form_event', reminder: @reminder %>
+            <div class="tab-pane fade " id="event" role="tabpanel" aria-labelledby="event-tab">
+                <%= render 'form_event', reminder: @reminder %>
+            </div>
+            <div class="tab-pane fade show active" id="medicine" role="tabpanel" aria-labelledby="medicine-tab">
+                <%= render 'form', reminder: @reminder %>
+            </div>
         </div>
-        <div class="tab-pane fade show active" id="medicine" role="tabpanel" aria-labelledby="medicine-tab">
-            <%= render 'form', reminder: @reminder %>
-        </div>
-    </div>
 </div>

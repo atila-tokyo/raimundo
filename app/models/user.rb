@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :username, uniqueness: { case_sensitive: false }
 
-  validates_format_of :username, with: /^[a-zA-Z0-9_.]*$/, multiline: true
+  # validates_format_of :username, with: /^[a-zA-Z0-9_.]*$/, multiline: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, authentication_keys: %i[login]
