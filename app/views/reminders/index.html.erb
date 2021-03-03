@@ -1,18 +1,38 @@
+<div class="container d-flex flex-column align-items-center justify-center pt-5">
+    <h2 class="reminder-title"></h2>
 
-<ul>
-    <% @reminders.each do |reminder|%>
-        <li>
-            <h2><%= reminder.title %><h2>
-            <h3>Hora do Alarme: <%= reminder.alarm_time %><h3>
-            <h3>Descrição: <%= reminder.content %><h3>
-            <h3>Medicação: <%= reminder.medicine_dose %></h3>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="event-tab" data-toggle="tab" href="#event" role="tab" aria-controls="event" aria-selected="true">Evento</a>
         </li>
-    <% end %>
-</ul>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="medicine-tab" data-toggle="tab" href="#medicine" role="tab" aria-controls="medicine" aria-selected="false">Medicamento</a>
+        </li>
+        
+    </ul>
+        <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="event" role="tabpanel" aria-labelledby="event-tab">
+            
+        </div>
+        <div class="tab-pane fade" id="medicine" role="tabpanel" aria-labelledby="medicine-tab">
+            <ul>
+                <% @reminders.each do |reminder|%>
+                    <li>
+                        <h2><%= reminder.title %><h2>
+                        <h3>Hora do Alarme: <%= reminder.alarm_time %><h3>
+                        <h3>Descrição: <%= reminder.content %><h3>
+                        <h3>Medicação: <%= reminder.medicine_dose %></h3>
+                    </li>
+                <% end %>
+            </ul>
 
-<h1>Todos os seus medicamentos: </h1>
-<% @current_user.medicines.each do |reminder|%>
-    <h1>
-        <%= reminder.name %> 
-    </h1>
-<% end %>
+            <h1>Todos os seus medicamentos: </h1>
+                <% @current_user.medicines.each do |reminder|%>
+                    <h1>
+                        <%= reminder.name %> 
+                    </h1>
+                <% end %>
+            </div>
+        </div>
+    </div>
+
