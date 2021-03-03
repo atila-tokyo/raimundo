@@ -1,8 +1,13 @@
 <%= simple_form_for reminder do |f| %>
     <%= f.input :title, label: "Título", placeholder: "Médico Cardiologista" %>
-    <%= f.input :alarm_time, label: 'Horário do Alarme: '%><br>
+    <%= f.input :alarm_time, label: 'Horário do Alarme'%><br>
     <%= f.input :content, as: :text, placeholder: "Se quiser, escreva alguns detalhes do seu lembrete", input_html: { rows: 5 } %>
-    <div class="d-flex justify-content-around">
+
+    <div id= "search-data" class="form-search search-data py-3" data-medicines="<%= Medicine.pluck(:name).sort.to_json %>">
+        <%= text_field_tag :search_choice, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Procura seu remédio..." %>
+    </div>
+
+    <div class="d-flex justify-content-around py-3">
         <%= f.simple_fields_for :medicine_dose do |medicine_options| %>
             <%= medicine_options.input :medicine_quantity, label: "Quantidade" %>
             <%= medicine_options.input :medicine_unity, label: "Unidade", collection: medicine_dose_value, input_html: { value: "" } %>

@@ -6,5 +6,4 @@ class Reminder < ApplicationRecord
 
   validates :content, :title, presence: true
 
-  validates_uniqueness_of :user
 end
