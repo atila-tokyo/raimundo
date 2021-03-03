@@ -1,0 +1,10 @@
+<%= simple_form_for reminder do |f| %>
+    <%= f.input :title, label: "Título", placeholder: "Baile da terceira idade" %>
+    <%= f.input :alarm_time, label: 'Horário do Alarme'%><br>
+    <%= f.input :content, as: :text, placeholder: "Se quiser, escreva alguns detalhes do seu lembrete", input_html: { rows: 5 } %>
+    
+    <div class="d-flex justify-content-between">
+      <%= link_to "Voltar ao Perfil",  root_path, class: 'btn btn-primary mt-2 mb-5'  %>
+      <%= f.submit "Criar Lembrete",class: 'btn btn-success mt-2 mb-5 ml-5 w-50' %>
+    </div>
+<% end %>

@@ -1,8 +1,6 @@
 class Reminder < ApplicationRecord
   belongs_to :user
-  belongs_to :medicine, dependent: :destroy
-
-  OPTIONS = ["Evento", "Medicamento"]
+  belongs_to :medicine, dependent: :destroy, optional: true
 
   validates :content, :title, presence: true
 

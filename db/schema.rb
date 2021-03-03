@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2021_03_01_180222) do
     t.string "title", null: false
     t.string "content"
     t.bigint "user_id", null: false
-    t.bigint "medicine_id", null: false
+    t.bigint "medicine_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["medicine_id"], name: "index_reminders_on_medicine_id"

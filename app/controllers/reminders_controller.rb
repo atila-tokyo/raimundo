@@ -3,7 +3,7 @@ class RemindersController < ApplicationController
   after_action :authorize_reminder, only: %i[new create]
 
   def index
-    @reminders = policy_scope(current_user.reminders).order(created_at: :desc)
+    @reminders = policy_scope(Reminder).order(created_at: :desc)
   end
 
   def new
@@ -12,9 +12,11 @@ class RemindersController < ApplicationController
 
   def create
     @reminder = Reminder.new(reminder_params)
-    @reminder.medicine_dose = dose_format(params.dig(:reminder, :medicine_dose), params[:search_choice])
+    unless params[:search_choice].nil?
+      @reminder.medicine_dose = dose_format(params.dig(:reminder, :medicine_dose), params[:search_choice])
+      @reminder.medicine = find_medicine
+    end  
     @reminder.user = current_user
-    @reminder.medicine = find_medicine
 
     if @reminder.save
       redirect_to reminders_path
