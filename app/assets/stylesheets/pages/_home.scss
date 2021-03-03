@@ -63,7 +63,8 @@
 
 // Home page title
 .home-title {
-  font-family: "Copper Black", sans-serif;
+  font-family: "Kameron", serif;
+  font-weight: bold;
   margin-top: 220px;
   margin-left: 40px;
   font-size: 111px;
@@ -73,7 +74,7 @@
 // Home page subtitle
 .home-subtitle {
   font-family: "Montserrat", sans-serif;
-  margin-top: 24px;
+  margin-top: 18px;
   margin-left: 45px;
   color: #f1f1f1;
 }
@@ -97,26 +98,31 @@
   height: 100px;
   border-radius: 50px;
   background-color: #FF9C33;
+  border-color: #eb8920;
   font-weight: bold;
-  font-family: "Copper Black", sans-serif;
+  font-family: "Montserrat", sans-serif;
   box-shadow: 5px 10px 18px #888888;
+  stroke: none;
 }
 
 .sign-up-btn:hover {
   background-color: #eb8920;
   box-shadow: 5px 10px 18px #888888;
+  stroke: none;
+  border-color: #eb8920;
 }
 
 // Login button 
 .login-btn {
-  margin-left: 15px;;
+  margin-left: 15px;
   width: 200px;
   height: 100px;
   border-radius: 50px;
   font-weight: bold;
-  font-family: "Copper Black", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
-//----------//
+
+
 // Login button and Sign Up align text
 .home-buttons a {
   display: inline-flex;
@@ -125,7 +131,16 @@
   align-items: center;
 }
 
+//----------//
+
 //-----Home Page Body-----//
+
+.home-content-layout {
+  box-shadow: 0px 0px 5px 5px #d4d4d4;
+  -webkit-box-shadow: 0px 0px 5px 5px #d4d4d4;
+  -moz-box-shadow: 0px 0px 5px 5px #d4d4d4;
+  
+}
 
 .home-content {
   margin-top: 125px;
@@ -142,7 +157,7 @@
   margin-bottom: 70px;
   font-weight: bold;
   font-size: 45px;
-  font-family: "Copper Black", sans-serif;
+  font-family: "Kameron", serif;
 
 }
 
@@ -153,7 +168,8 @@
 
 .card p {
   opacity: .6;
-  font-weight: bolder;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
 }
 
 .card {
@@ -174,12 +190,14 @@
 }
 
 .card-title {
-  font-weight: bold;
+  font-weight: 700;
   margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .card-subtitle {
   margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
 }
 
 // Home page footer
@@ -219,4 +237,5 @@
 .footer-text {
   color: #f1f1f1;
   padding-top: 15px;
+  font-family: "Montserrat", sans-serif;
 }
