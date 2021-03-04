@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :reminders, dependent: :destroy
   has_many :medicines, through: :reminders
 
+  has_one_attached :photo, dependent: :destroy
+
   validates :first_name, :last_name,
             :username, presence: true
 
@@ -21,6 +23,18 @@ class User < ApplicationRecord
   #   # @login || self.username || self.email
   #   @login || username || email
   # end
+
+  def profile_picture
+    if photo.attached?
+      photo.key
+    else
+      "https://imgur.com/gujVwpV.png"
+    end
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 
   def self.find_for_database_authentication(warden_condition)
     conditions = warden_condition.dup
