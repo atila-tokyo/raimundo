@@ -16,8 +16,8 @@ class RemindersController < ApplicationController
       @reminder.medicine_dose = dose_format(params.dig(:reminder, :medicine_dose), params[:search_choice])
       @reminder.medicine = find_medicine
     end
+    @reminder.alarm_time = date_format(params.dig(:reminder, :alarm_time))
     @reminder.user = current_user
-
     if @reminder.save
       redirect_to reminders_path
     else
@@ -49,5 +49,9 @@ class RemindersController < ApplicationController
 
   def find_medicine
     Medicine.find_by_name(params[:search_choice])
+  end
+
+  def date_format(date_params)
+    DateTime.parse(date_params, '%d/%m/%Y %I:%M').to_s(:db)
   end
 end
