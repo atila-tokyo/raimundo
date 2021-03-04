@@ -1,12 +1,13 @@
 class ReminderPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
+      # scope ===> Reminder
       scope.all.where(user: user)
     end
   end
 
   def show?
-    is_owner?
+    owner?
   end
 
   def create?
@@ -14,22 +15,20 @@ class ReminderPolicy < ApplicationPolicy
   end
 
   def edit?
-    is_owner? 
+    owner?
   end
 
   def update?
-    is_owner?
+    owner?
   end
-  
+
   def destroy
-    is_owner?
+    owner?
   end
-  
+
   private
 
-  def is_owner?
-    user == record.user 
+  def owner?
+    record.user == user
   end
-
-
 end
