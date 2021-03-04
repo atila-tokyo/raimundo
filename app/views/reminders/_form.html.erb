@@ -1,6 +1,8 @@
 <%= simple_form_for reminder do |f| %>
     <%= f.input :title, label: "Título", placeholder: "Médico Cardiologista" %>
-    <%= f.input :alarm_time, label: 'Horário do Alarme'%><br>
+        <%= f.input :alarm_time, as: :string, label: 'Horário do Alarme',
+            input_html: { class: "datepicker" } %>
+            
     <%= f.input :content, as: :text, placeholder: "Se quiser, escreva alguns detalhes do seu lembrete", input_html: { rows: 5 } %>
 
     <div id= "search-data" class="form-search search-data py-3" data-medicines="<%= Medicine.pluck(:name).sort.to_json %>">
