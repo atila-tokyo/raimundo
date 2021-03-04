@@ -2,7 +2,7 @@ class ReminderPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       # scope ===> Reminder
-      scope.all.where(user: user)
+      scope.where(user: user)
     end
   end
 
