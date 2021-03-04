@@ -56,6 +56,6 @@ class RemindersController < ApplicationController
     # Time.parse(date_params, '%d/%m/%Y %I:%M')
     # DateTime.strptime(date_params, "%d/%m/%y %H:%M")
     # %R time, 24-hour (%H:%M)
-    Time.strptime(date_params, "%d/%m/%Y %I:%M")
+    Time.strptime(date_params, "%d/%m/%Y %H:%M")
   end
 end
