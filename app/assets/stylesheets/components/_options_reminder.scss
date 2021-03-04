@@ -1,13 +1,29 @@
 // --- Reminders New - Form --- //
 
-//btn-create, btn-back
+// Page background
 
+#new-page {
+  // background: radial-gradient(#696969, 100%, #ed8b6d, 100%) !important;
+  // background: radial-gradient(50% 50% at 50% 58.97%, #0E8AA9 0%, #5FD6F1 100%);
+  background: radial-gradient(51.28% 51.28% at 48.72% 57.34%, #5FD6F1 0%, #1D95B4 100%);
+}
 // Page title
 .reminder-title {
-  margin-bottom: 1.5em;
-  font-family: "Kameron", serif;
+  // margin-top: 0.5em;
+  margin-bottom: 0.8em;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  color: #f1f1f1;
+  // color: rgb(29, 80, 99);
+   color: #f1f1f1;
+}
+
+// Form card
+.form-card {
+  background-color: rgb(29, 80, 99);
+  padding: 1em;
+  margin-bottom: 1.5em;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 // Option tabs (Event or medication)
@@ -19,11 +35,17 @@
   border-bottom: none;
 }
 
+// Input text colors
+input, select, textarea {
+  color:#615f5f !important;
+  }
+
 // Specific tabs
 #event-tab, #medicine-tab {
   border-color: #f1f1f1;
   border-radius: 25px;
-  color: rgb(68, 67, 67);
+  // color: rgb(68, 67, 67);
+  color: #f1f1f1;
 }
 
 a.active {
@@ -36,22 +58,27 @@ a.active {
 }
 
 
-
 // Label for reminder inputs
-.string.required, .date.optional, .text.required {
-  color: rgb(68, 67, 67);
+.string.required, .date.optional, .text.required, .select.required, .text.optional, .string.optional {
+  // color: rgb(68, 67, 67);
+  color: #f1f1f1;
 }
 
+
+
 // "Back to profile" and "Create" buttons
-.btn-back {
+.btn-back, .btn-create {
   width: 200px;
+  margin-bottom: 20px !important;
+  
 }
 
 .btn-create:hover {
   background-color: #08c26e;
+  color: #eeeaea !important;
 }
 
-
+// ---------- //
 
 #option_category_evento + label {
   color:#e99e2dfe;
