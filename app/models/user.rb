@@ -28,7 +28,7 @@ class User < ApplicationRecord
     if photo.attached?
       photo.key
     else
-      "https://imgur.com/gujVwpV.png"
+      "default_profile.png"
     end
   end
 
