@@ -11,27 +11,45 @@
         
     </ul>
         <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="event" role="tabpanel" aria-labelledby="event-tab">
-            
-        </div>
-        <div class="tab-pane fade" id="medicine" role="tabpanel" aria-labelledby="medicine-tab">
+        <div class="tab-pane fade" id="event" role="tabpanel" aria-labelledby="event-tab">
             <ul>
                 <% @reminders.each do |reminder|%>
-                    <li>
-                        <h2><%= reminder.title %><h2>
-                        <h3>Hora do Alarme: <%= reminder.alarm_time %><h3>
-                        <h3>Descrição: <%= reminder.content %><h3>
-                        <h3>Medicação: <%= reminder.medicine_dose %></h3>
-                    </li>
+                    <% unless reminder.medicine.present? %>    
+                        <li>
+                            <h2><%= reminder.title %><h2>
+                            <h3>Hora do Alarme: <%= reminder.alarm_time.strftime("%d/%m/%Y %H:%M") %><h3>
+                            <% if reminder.content.present? %>
+                                <h3>Descrição: <%= reminder.content %><h3>
+                            <% end %>
+                        </li>
+                    <% end %> 
+                <% end %>
+            </ul>
+        </div>
+        <div class="tab-pane fade show active" id="medicine" role="tabpanel" aria-labelledby="medicine-tab">
+            <ul>
+                <% @reminders.each do |reminder|%>
+                    <% if reminder.medicine.present? %>    
+                        <li>
+                            <h2><%= reminder.title %><h2>
+                            <h3>Hora do Alarme: <%= reminder.alarm_time.strftime("%d/%m/%Y %H:%M")  %><h3>
+                            <% if reminder.content.present? %>
+                                <h3>Descrição: <%= reminder.content %><h3>
+                            <% end %>
+                            <h3>Medicação: <%= reminder.medicine_dose %></h3>
+                        </li>
+                    <% end %> 
                 <% end %>
             </ul>
 
             <h1>Todos os seus medicamentos: </h1>
-                <% @current_user.medicines.each do |reminder|%>
-                    <h1>
-                        <%= reminder.name %> 
-                    </h1>
-                <% end %>
+                <% @current_user.medicines.each do |medicine|%>
+                    <% if medicine.present? %> 
+                        <h1>
+                            <%= medicine.name %> 
+                        </h1>
+                    <% end %>    
+                <% end %>               
             </div>
         </div>
     </div>

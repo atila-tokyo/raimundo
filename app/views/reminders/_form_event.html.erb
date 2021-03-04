@@ -1,6 +1,8 @@
 <%= simple_form_for reminder do |f| %>
-    <%= f.input :title, label: "Título", placeholder: "Baile da terceira idade" %>
-    <%= f.input :alarm_time, label: 'Horário do Alarme'%><br>
+    <%= f.input :title, label: "Título", placeholder: "Ex: Baile da terceira idade" %>
+    <%= f.input :alarm_time, as: :string, label: 'Horário do Alarme',
+        input_html: { class: "datepicker" }
+    %>
     <%= f.input :content, as: :text, placeholder: "Se quiser, escreva alguns detalhes do seu lembrete", input_html: { rows: 5 } %>
     
     <div class="d-flex justify-content-between">
