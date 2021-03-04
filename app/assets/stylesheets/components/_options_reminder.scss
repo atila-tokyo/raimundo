@@ -38,7 +38,7 @@ a.active {
 
 
 // Label for reminder inputs
-.string.required, .date.optional, .text.required {
+.string.required, .date.optional, .text.required, .select.required, .text.optional, .string.optional {
   color: rgb(68, 67, 67);
 }
 
