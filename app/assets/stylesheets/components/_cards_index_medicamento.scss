@@ -1,0 +1,28 @@
+.tab-content{
+  display: grid;
+  grid-template-columns: 240px 1fr;
+     
+     
+   
+}
+
+.card-product {
+  margin-top: 50px;
+  width: 600px;
+  background-color: rgb(29, 80, 99);
+  
+  
+ 
+}
+.card-product-infos {
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+.text-color-p{
+    color: white;
+}
+.medicines{
+    float: left;
+}
