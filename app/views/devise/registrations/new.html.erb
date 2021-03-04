@@ -22,21 +22,35 @@
                   <%= f.input :first_name, label: false, input_html: { placeholder: "ex: Raimundo", class: "form-control"} %>
               </div> 
             -->
-            <%= f.input :first_name, input_html: { placeholder: "ex: Raimundo", class: "form-control"} %>
-            <%= f.input :last_name, input_html: { placeholder: "ex: Nonato", class: "form-control" } %>
+            <%= f.input :first_name, input_html: { placeholder: "ex: Raimundo", class: "form-control"},
+                label: add_tooltip_to_label("Nome", "Nome é necessário")
+            
+            %>
+            <%= f.input :last_name, input_html: { placeholder: "ex: Nonato", class: "form-control" },
+                label: "Sobrenome"
+            %>
+
+            
             <%= f.input :email,
                         required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "email", placeholder: "ex: raimundo_nonato@gmail.com" } %>
-            <%= f.input :username, input_html: { placeholder: "ex: raimundo_nonato" }%>
-            <%= f.input :photo, as: :file, label: "Coloque um foto sua" %>
+                        autofocus: true
+                        %>
+            <%= f.input :username, input_html: { placeholder: "ex: raimundo_nonato" }, 
+                label: "Nome de usuário"
+            %>
+            <%= f.input :photo, as: :file, label: "Coloque um foto sua"
+            %>
             <%= f.input :password,
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password" } %>
+                        input_html: { autocomplete: "new-password" }, 
+                        label: "Senha"
+                        %>
             <%= f.input :password_confirmation,
                         required: true,
-                        input_html: { autocomplete: "new-password" } %>
+                        input_html: { autocomplete: "new-password" },
+                        label: "Confirma sua senha"
+                        %>
         </div>
 
         <div class="d-flex justify-content-center align-items-center">

@@ -15,8 +15,10 @@
                     placeholder: "Email ou Nome do Usuário" %>
         <%= f.input :password,
                     required: false,
-                    input_html: { autocomplete: "current-password" } %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                    input_html: { autocomplete: "current-password" }, 
+                    label: "Senha"
+                    %>
+        <%= f.input :remember_me, label: "Mantenha-me conectado", as: :boolean if devise_mapping.rememberable? %>
       </div>
 
       <div class="d-flex justify-content-center align-items-center">
