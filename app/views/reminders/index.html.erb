@@ -1,56 +1,83 @@
 <div class="container d-flex flex-column align-items-center justify-center pt-5">
-    <h2 class="reminder-title"></h2>
-
-    <ul class="nav nav-tabs flex-row-reverse" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" id="event-tab" data-toggle="tab" href="#event" role="tab" aria-controls="event" aria-selected="true">Evento</a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" id="medicine-tab" data-toggle="tab" href="#medicine" role="tab" aria-controls="medicine" aria-selected="false">Medicamento</a>
-        </li>
-        
-    </ul>
-        <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade" id="event" role="tabpanel" aria-labelledby="event-tab">
-            <ul>
-                <% @reminders.each do |reminder|%>
-                    <% unless reminder.medicine.present? %>    
-                        <li>
-                            <h2><%= reminder.title %><h2>
-                            <h3>Hora do Alarme: <%= reminder.alarm_time.strftime("%d/%m/%Y %H:%M") %><h3>
-                            <% if reminder.content.present? %>
-                                <h3>Descrição: <%= reminder.content %><h3>
-                            <% end %>
-                        </li>
-                    <% end %> 
-                <% end %>
+    <!-- tabs nav bar start -->
+    <div class="row">
+        <div class="col-12 col-sm-12">
+            <ul class="nav nav-tabs flex-row-reverse" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="event-tab" data-toggle="tab" href="#event" role="tab" aria-controls="event" aria-selected="true">Evento</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="medicine-tab" data-toggle="tab" href="#medicine" role="tab" aria-controls="medicine" aria-selected="false">Medicamento</a>
+                </li>
             </ul>
-        </div>
-        <div class="tab-pane fade" id="medicine" role="tabpanel" aria-labelledby="medicine-tab">
-            <ul>
-                <% @reminders.each do |reminder|%>
-                    <% if reminder.medicine.present? %>    
-                        <li>
-                            <h2><%= reminder.title %><h2>
-                            <h3>Hora do Alarme: <%= reminder.alarm_time.strftime("%d/%m/%Y %H:%M")  %><h3>
-                            <% if reminder.content.present? %>
-                                <h3>Descrição: <%= reminder.content %><h3>
-                            <% end %>
-                            <h3>Medicação: <%= reminder.medicine_dose %></h3>
-                        </li>
-                    <% end %> 
-                <% end %>
-            </ul>
-
-            <h1>Todos os seus medicamentos: </h1>
-                <% @current_user.medicines.each do |medicine|%>
-                    <% if medicine.present? %> 
-                        <h1>
-                            <%= medicine.name %> 
-                        </h1>
-                    <% end %>    
-                <% end %>               
-            </div>
         </div>
     </div>
+    <!-- tabs nav bar end -->
+
+    <!-- tab-content start -->
+    <div class="tab-content" id="myTabContent">
+        <!-- tab-pane-event start -->
+        <div class="row">
+            <div class="tab-pane fade" id="event" role="tabpanel" aria-labelledby="event-tab">
+                <div class="col-12 col-sm-12">
+                    <!-- Index for Events -->
+                    <ul>
+                        <% @reminders.each do |reminder|%>
+                            <% unless reminder.medicine.present? %>    
+                                <li>
+                                    <h2><%= reminder.title %><h2>
+                                    <h3>Hora do Alarme: <%= reminder.alarm_time.strftime("%d/%m/%Y %H:%M") %><h3>
+                                    <% if reminder.content.present? %>
+                                        <h3>Descrição: <%= reminder.content %><h3>
+                                    <% end %>
+                                </li>
+                            <% end %> 
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+            <!-- tab-pane-event end -->
+
+            <!-- tab-pane-medicine start -->
+            <div class="tab-pane fade" id="medicine" role="tabpanel" aria-labelledby="medicine-tab">
+                <div class="row">
+                    <div class="col-6 col-sm-6">
+                        <ul>
+                            <% @reminders.each do |reminder|%>
+                                <% if reminder.medicine.present? %>    
+                                    <li>
+                                        <h2><%= reminder.title %><h2>
+                                        <h3>Hora do Alarme: <%= reminder.alarm_time.strftime("%d/%m/%Y %H:%M") %><h3>
+                                        <% if reminder.content.present? %>
+                                            <h3>Descrição: <%= reminder.content %><h3>
+                                        <% end %>
+                                        <h3>Medicação: <%= reminder.medicine_dose %></h3>
+                                    </li>
+                                <% end %> 
+                            <% end %>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-sm-6">
+                        <h1>Todos os seus medicamentos: </h1>
+                        <% @current_user.medicines.each do |medicine|%>
+                            <% if medicine.present? %> 
+                                <h1>
+                                    <%= medicine.name %> 
+                                </h1>
+                            <% end %>    
+                        <% end %>   
+                    </div> 
+                </div>
+                
+            </div>
+            <!-- tab-pane-medicine end -->
+        </div>
+    </div>
+    <!-- tab-content end -->
+</div>
+<!-- container end -->
+
+
+  
 
