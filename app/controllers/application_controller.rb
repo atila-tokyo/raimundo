@@ -17,11 +17,12 @@ class ApplicationController < ActionController::Base
     # # For additional in app/views/devise/registrations/edit.html.erb
     # devise_parameter_sanitizer.permit(:account_update, keys: [:username])
     devise_parameter_sanitizer.permit(:sign_up,
-                                      keys: %i[username first_name last_name email password password_confirmation])
+                                      keys: %i[username first_name last_name email password password_confirmation
+                                               photo])
     devise_parameter_sanitizer.permit(:sign_in,
-                                      keys: %i[login email password password_confirmation])
+                                      keys: %i[login password password_confirmation])
     devise_parameter_sanitizer.permit(:account_update,
-                                      keys: %i[username email password_confirmation current_password])
+                                      keys: %i[username email password_confirmation current_password photo])
   end
 
   include Pundit
