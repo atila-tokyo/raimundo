@@ -6,7 +6,7 @@
             <a class="nav-link" id="event-tab" data-toggle="tab" href="#event" role="tab" aria-controls="event" aria-selected="true">Evento</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="medicine-tab" data-toggle="tab" href="#medicine" role="tab" aria-controls="medicine" aria-selected="false">Medicamento</a>
+            <a class="nav-link" id="medicine-tab" data-toggle="tab" href="#medicine" role="tab" aria-controls="medicine" aria-selected="false">Medicamento</a>
         </li>
         
     </ul>
@@ -26,7 +26,7 @@
                 <% end %>
             </ul>
         </div>
-        <div class="tab-pane fade show active" id="medicine" role="tabpanel" aria-labelledby="medicine-tab">
+        <div class="tab-pane fade" id="medicine" role="tabpanel" aria-labelledby="medicine-tab">
             <ul>
                 <% @reminders.each do |reminder|%>
                     <% if reminder.medicine.present? %>    
