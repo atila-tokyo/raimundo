@@ -10,15 +10,18 @@ pt-BR:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Alguns erros foram encontrados, por favor verifique:"
-    # Labels and hints examples
-    labels:
-      defaults:
-        password: 'Senha'
-      user:
-        new:
-          email: 'E-mail para efetuar o sign in.'
-        edit:
-          email: 'E-mail.'
-    # hints:
+    #  Labels and hints examples
+    #  labels:
+    #    defaults:
+    #      password: 'Senha'
+    #    user:
+    #      new:
+    #        first_name: ""
+    #        last_name: ""
+    #        username: 'Precisa do nome de usuário'
+    #        email: 'E-mail para efetuar o sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # # hints:
     #   username: 'User name to sign in.'
     #   password: 'No special characters, please.'
