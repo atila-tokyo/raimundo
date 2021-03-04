@@ -1,6 +1,6 @@
 class RemindersController < ApplicationController
-  # before_action :set_reminder, only: %i[]
-  after_action :authorize_reminder, only: %i[new create]
+  before_action :set_reminder, only: %i[edit update]
+  # after_action :authorize_reminder, only: %i[new create edit update]
 
   def index
     @reminders = policy_scope(Reminder).order(created_at: :desc)
@@ -24,6 +24,14 @@ class RemindersController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    authorize_reminder
+  end
+
+  # def update
+  #   @reminder = 
+  # end
 
   private
 
