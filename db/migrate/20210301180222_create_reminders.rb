@@ -1,7 +1,7 @@
 class CreateReminders < ActiveRecord::Migration[6.1]
   def change
     create_table :reminders do |t|
-      t.date :alarm_time
+      t.datetime :alarm_time
       t.string :medicine_dose
       t.string :title, null: false
       t.string :content
