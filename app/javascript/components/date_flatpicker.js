@@ -1,6 +1,4 @@
 import flatpickr from 'flatpickr';
-import 'flatpickr/dist/themes/airbnb.css';
-import 'flatpickr/dist/themes/material_orange.css';
 import { Portuguese } from 'flatpickr/dist/l10n/pt.js';
 import moment from 'moment';
 
