@@ -10,6 +10,14 @@
   color: #f1f1f1;
 }
 
+// Form card
+.form-card {
+  background-color: rgb(29, 80, 99);
+  padding: 1em;
+  border-radius: 25px;
+  box-shadow: #f1f1f1;
+}
+
 // Option tabs (Event or medication)
 .nav-tabs {
   margin-bottom: 1em;
@@ -23,7 +31,8 @@
 #event-tab, #medicine-tab {
   border-color: #f1f1f1;
   border-radius: 25px;
-  color: rgb(68, 67, 67);
+  // color: rgb(68, 67, 67);
+  color: #f1f1f1;
 }
 
 a.active {
@@ -39,19 +48,26 @@ a.active {
 
 // Label for reminder inputs
 .string.required, .date.optional, .text.required, .select.required, .text.optional, .string.optional {
-  color: rgb(68, 67, 67);
+  // color: rgb(68, 67, 67);
+  color: #f1f1f1;
+}
+
+// Unity input
+.input-unity {
+  color: #888888;
 }
 
 // "Back to profile" and "Create" buttons
-.btn-back {
+.btn-back, .btn-create {
   width: 200px;
+  margin-bottom: 20px !important;
 }
 
 .btn-create:hover {
   background-color: #08c26e;
 }
 
-
+// ---------- //
 
 #option_category_evento + label {
   color:#e99e2dfe;

@@ -12,7 +12,7 @@
     <div class="d-flex justify-content-around py-3">
         <%= f.simple_fields_for :medicine_dose do |medicine_options| %>
             <%= medicine_options.input :medicine_quantity, label: "Quantidade" %>
-            <%= medicine_options.input :medicine_unity, label: "Unidade", collection: medicine_dose_value, input_html: { value: "" } %>
+            <%= medicine_options.input :medicine_unity, label: "Unidade", class: "input-unity", collection: medicine_dose_value, input_html: { value: "" } %>
         <% end %>
     </div>
     
