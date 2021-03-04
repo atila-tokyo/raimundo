@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_03_01_180222) do
   end
 
   create_table "reminders", force: :cascade do |t|
-    t.date "alarm_time"
+    t.datetime "alarm_time"
     t.string "medicine_dose"
     t.string "title", null: false
     t.string "content"
