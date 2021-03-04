@@ -11,15 +11,15 @@ const datepicker = () => {
 	const momentNow = moment();
 	if (flatpickr('.datepicker')) {
 		flatpickr('.datepicker', {
-			dateFormat: 'd/m/Y H:i',
-			locale: Portuguese,
-			altInput: true,
-			altFormat: 'F j, Y H:i',
 			enableTime: true,
+			altInput: true,
+			time_24hr: true,
+			locale: Portuguese,
+			dateFormat: 'd/m/Y H:i',
+			altFormat: 'F j, Y H:i',
 			defaultHour: momentNow.hour(),
 			defaultMinute: momentNow.minutes(),
-			time_24hr: true,
-			minDate: new Date()
+			minDate: new Date(),
 		});
 	}
 };
