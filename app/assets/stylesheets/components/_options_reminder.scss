@@ -64,18 +64,31 @@ a.active {
   color: #f1f1f1;
 }
 
-
-
 // "Back to profile" and "Create" buttons
 .btn-back, .btn-create {
   width: 200px;
   margin-bottom: 20px !important;
+  border-radius: 25px;
+  border: none;  
+  // color: #f1f1f1 !important;
+}
+
+.btn-back {
+  background-color: #26B6B6;
   
 }
 
-.btn-create:hover {
+.btn-back:hover {
+  background-color: #1c9999;
+}
+
+.btn-create {
   background-color: #08c26e;
   color: #eeeaea !important;
+}
+
+.btn-create:hover {
+  background-color: #089958
 }
 
 // ---------- //
