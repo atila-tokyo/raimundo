@@ -85,6 +85,9 @@ a.active {
 .btn-create {
   background-color: #08c26e;
   color: #eeeaea !important;
+  -webkit-box-shadow: 0 8px 6px -6px #252525;
+	   -moz-box-shadow: 0 8px 6px -6px #252525;
+	        box-shadow: 0 8px 6px -6px #252525;
 }
 
 .btn-create:hover {
