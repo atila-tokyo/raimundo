@@ -1,17 +1,26 @@
 // --- Reminders New - Form --- //
 
+// Page background
+
+#new-page {
+  // background: radial-gradient(#696969, 100%, #ed8b6d, 100%) !important;
+  background: radial-gradient(50% 50% at 50% 58.97%, #0E8AA9 0%, #5FD6F1 100%);
+}
 // Page title
 .reminder-title {
-  margin-bottom: 1.5em;
+  // margin-top: 0.5em;
+  margin-bottom: 0.8em;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  color: #f1f1f1;
+  // color: rgb(29, 80, 99);
+   color: #f1f1f1;
 }
 
 // Form card
 .form-card {
   background-color: rgb(29, 80, 99);
   padding: 1em;
+  margin-bottom: 1.5em;
   border-radius: 25px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -26,7 +35,7 @@
 }
 
 // Input text colors
-select, textarea {
+input, select, textarea {
   color:#615f5f !important;
   }
 
