@@ -1,12 +1,12 @@
-<%= simple_form_for reminder do |f| %>
+<%= simple_form_for reminder, html: { class: "form-new-event"} do |f| %>
     <%= f.input :title, label: "Título", placeholder: "Ex: Baile da terceira idade" %>
     <%= f.input :alarm_time, as: :string, label: 'Horário do Alarme',
         input_html: { class: "datepicker" }
     %>
-    <%= f.input :content, label: "Detalhes", as: :text, placeholder: "Se quiser, escreva alguns detalhes do seu lembrete", input_html: { rows: 5 } %>
+    <%= f.input :content, label: "Detalhes", as: :text, placeholder: "Se quiser, escreva alguns detalhes do seu lembrete",  input_html: { rows: 5 } %>
     
     <div class="d-flex justify-content-between">
-      <%= link_to "Voltar ao Perfil",  root_path, class: 'btn-back btn btn-primary mt-2 mb-5'  %>
+      <%= link_to "Voltar ao Perfil",  root_path, class: 'btn-back btn btn-primary mt-2 mb-5' %>
       <%= f.submit "Criar Lembrete",class: 'btn-create btn btn-success mt-2 mb-5 ml-5 w-50' %>
     </div>
 <% end %>
