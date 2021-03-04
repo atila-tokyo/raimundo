@@ -1,11 +1,9 @@
 // --- Reminders New - Form --- //
 
-//btn-create, btn-back
-
 // Page title
 .reminder-title {
   margin-bottom: 1.5em;
-  font-family: "Kameron", serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: #f1f1f1;
 }
@@ -15,7 +13,7 @@
   background-color: rgb(29, 80, 99);
   padding: 1em;
   border-radius: 25px;
-  box-shadow: #f1f1f1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 // Option tabs (Event or medication)
@@ -26,6 +24,11 @@
 #myTab {
   border-bottom: none;
 }
+
+// Input text colors
+select, textarea {
+  color:#615f5f !important;
+  }
 
 // Specific tabs
 #event-tab, #medicine-tab {
@@ -45,26 +48,24 @@ a.active {
 }
 
 
-
 // Label for reminder inputs
 .string.required, .date.optional, .text.required, .select.required, .text.optional, .string.optional {
   // color: rgb(68, 67, 67);
   color: #f1f1f1;
 }
 
-// Unity input
-.input-unity {
-  color: #888888;
-}
+
 
 // "Back to profile" and "Create" buttons
 .btn-back, .btn-create {
   width: 200px;
   margin-bottom: 20px !important;
+  
 }
 
 .btn-create:hover {
   background-color: #08c26e;
+  color: #eeeaea !important;
 }
 
 // ---------- //
