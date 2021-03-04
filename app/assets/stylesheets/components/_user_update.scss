@@ -1,0 +1,35 @@
+// --- Edit/Update Page --- //
+
+// Page title
+.title-update {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: bold !important;
+  color: #f1f1f1 !important;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+// Input helper tags
+.form-text.text-muted {
+  color: #FEC601 !important;
+}
+
+// Labels for inputs
+.form-text-label {
+  color: #ff0606 !important;
+}
+
+// Update success button
+.btn-update {
+  color: #f1f1f1 !important;
+  width: 200px;
+  margin-bottom: 20px !important;
+  border-radius: 25px;
+  border: none;
+  background-color: #08c26e;
+  color: #eeeaea !important;
+  -webkit-box-shadow: 0 8px 6px -6px #252525;
+	   -moz-box-shadow: 0 8px 6px -6px #252525;
+	        box-shadow: 0 8px 6px -6px #252525;
+}
+

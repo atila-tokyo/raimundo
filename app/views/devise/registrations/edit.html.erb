@@ -1,55 +1,78 @@
-<h2> Edite seu Perfil </h2>
+<div class="container">
+  <h2 class="title-update"> Edite seu Perfil </h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-
-    <%= f.input :photo, as: :file, label: "Altere sua foto do perfil" %>
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-
-    <%= f.input :username, 
-        hint: "Deixe em branco se não quiser alterar!",
-        label: "Nome de usuário"
-    %>
-    <%= f.input :first_name, 
-        hint: "Deixe em branco se não quiser alterar!",
-        label: "Nome"
-    %>
-    <%= f.input :last_name, 
-        hint: "Deixe em branco se não quiser alterar!",
-        label: "Sobrenome"
-    %>
-    <%= f.input :password,
-                hint: "Deixe em branco se não quiser alterar!",
-                required: false,
-                input_html: { autocomplete: "new-password" }, 
-                label: "Senha"
+    <div class="form-inputs">
+      <div class="d-flex justify-space-between">
+        <div class="mr-3">
+          <% if current_user.photo.attached? %>
+                <%= cl_image_tag current_user.profile_picture,
+                    width: 56, height: 56, crop: :thumb, gravity: :face,
+                    class: "avatar dropdown-toggle", id: "navbarDropdown", 
+                    data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false 
                 %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" },
-                label: "Confirmação de senha"
-                %>
-    <%= f.input :current_password,
-                hint: "Sua senha atual é necessária para atualizar as alterações",
-                required: true,
-                input_html: { autocomplete: "current-password" },
-                label: "Senha atual"
-                %>
-  </div>
+          <% else %>
+            <%= image_tag current_user.profile_picture, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+        </div>
+        <div>
+          <%= f.input :photo, as: :file, class: "form-text-label", label: "Altere sua foto do perfil" %>
+        </div>
+      </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Atualizar" %>
-  </div>
-<% end %>
+      <%= f.input :email, required: true, autofocus: true, class: "form-text-label" %>
+      
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
 
-<h3>Cancela minha conta</h3>
+      <%= f.input :username, 
+          hint: "Deixe em branco se não quiser alterar!",
+          label: "Nome de usuário",
+          class: "form-text-label"
+      %>
+      <%= f.input :first_name, 
+          hint: "Deixe em branco se não quiser alterar!",
+          label: "Nome",
+          class: "form-text-label"
+      %>
+      <%= f.input :last_name, 
+          hint: "Deixe em branco se não quiser alterar!",
+          label: "Sobrenome",
+          class: "form-text-label"
+      %>
+      <%= f.input :password,
+                  hint: "Deixe em branco se não quiser alterar!",
+                  required: false,
+                  input_html: { autocomplete: "new-password" }, 
+                  label: "Senha",
+                  class: "form-text-label"
+                  %>
+      <%= f.input :password_confirmation,
+                  required: false,
+                  input_html: { autocomplete: "new-password" },
+                  label: "Confirmação de senha",
+                  class: "form-text-label"
+                  %>
+      <%= f.input :current_password,
+                  hint: "Sua senha atual é necessária para atualizar as alterações",
+                  required: true,
+                  input_html: { autocomplete: "current-password" },
+                  label: "Senha atual",
+                  class: "form-text-label"
+                  %>
+    </div>
 
-<p>Triste? <%= link_to "Cancelar Conta", registration_path(resource_name), data: { confirm: "Tem certeza?" }, method: :delete %></p>
+    <div class="btn-update btn btn-success mt-2 mb-5 form-actions">
+      <%= f.button :submit, "Atualizar" %>
+    </div>
+  <% end %>
 
-<%= link_to "Voltar", :back %>
+  <h3>Cancela minha conta</h3>
+
+  <p>Triste? <%= link_to "Cancelar Conta", registration_path(resource_name), data: { confirm: "Tem certeza?" }, method: :delete %></p>
+
+  <%= link_to "Voltar", :back %>
+</div>
