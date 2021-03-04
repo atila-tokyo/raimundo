@@ -17,7 +17,7 @@
                     <% unless reminder.medicine.present? %>    
                         <li>
                             <h2><%= reminder.title %><h2>
-                            <h3>Hora do Alarme: <%= reminder.alarm_time %><h3>
+                            <h3>Hora do Alarme: <%= reminder.alarm_time.strftime("%d/%m/%y %H:%M") %><h3>
                             <% if reminder.content.present? %>
                                 <h3>Descrição: <%= reminder.content %><h3>
                             <% end %>
@@ -32,7 +32,7 @@
                     <% if reminder.medicine.present? %>    
                         <li>
                             <h2><%= reminder.title %><h2>
-                            <h3>Hora do Alarme: <%= reminder.alarm_time  %><h3>
+                            <h3>Hora do Alarme: <%= reminder.alarm_time.strftime("%d/%m/%y %H:%M")  %><h3>
                             <% if reminder.content.present? %>
                                 <h3>Descrição: <%= reminder.content %><h3>
                             <% end %>

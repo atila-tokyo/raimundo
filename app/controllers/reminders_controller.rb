@@ -52,6 +52,9 @@ class RemindersController < ApplicationController
   end
 
   def date_format(date_params)
-    DateTime.parse(date_params, '%d/%m/%Y %I:%M').to_s(:db)
+    # https://apidock.com/ruby/DateTime/strftime
+    # Time.parse(date_params, '%d/%m/%Y %I:%M')
+    # DateTime.strptime(date_params, "%d/%m/%y %H:%M")
+    Time.strptime(date_params, "%d/%m/%y %H:%M")
   end
 end
