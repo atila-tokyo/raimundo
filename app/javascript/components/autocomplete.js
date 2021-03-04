@@ -1,4 +1,3 @@
-import 'js-autocomplete/auto-complete.css';
 import autocomplete from 'js-autocomplete';
 
 
