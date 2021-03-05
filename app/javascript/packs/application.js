@@ -24,7 +24,7 @@ ActiveStorage.start();
 // ----------------------------------------------------
 import { autocompleteSearch } from '../components/autocomplete';
 import { datepicker } from '../components/date_flatpicker';
-
+import { changeBtnName } from '../components/changeBtnNameEdit';
 // External imports
 import 'bootstrap';
 
@@ -36,5 +36,5 @@ document.addEventListener('turbolinks:load', () => {
 	// initSelect2();
 	autocompleteSearch();
 	datepicker();
-
+	changeBtnName();
 });
