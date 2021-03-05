@@ -6,7 +6,7 @@
                         <div class="card-product"> 
                             <div class="card-product-infos" >     
                                 <li>
-                                    <h2><%= reminder.title %><h2>
+                                    <h2 class="reminder-card-title-med"><%= reminder.title %><h2>
                                     <h3>Hora do Alarme: <%= reminder.alarm_time.strftime("%d/%m/%Y %H:%M") %><h3>
                                     <% if reminder.content.present? %>
                                         <h3>Descrição: <%= reminder.content %><h3>
