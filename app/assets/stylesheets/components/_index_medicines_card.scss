@@ -2,6 +2,41 @@ li {
     list-style-type: none;
 }
 
+// Card title (medicine)
 .reminder-card-title-med{
-  font-size: 50px !important;
+  font-size: 25px !important;
+  font-family: "Montserrat", sans-serif !important;
+  margin: 5px 0 5px 0 !important;
+}
+
+// Med reminder card content
+.card-product-infos-meds {
+  width: 100%;
+  .card-header > .header-med {
+    font-size: 1.5rem;
+  }
+}
+
+// Med reminder cards column and layout
+.card-product-meds {
+  border-radius: 25px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+// "All your meds" card
+.all-meds {
+  background-color: #f1f1f1;
+  position: fixed;
+  right: 2rem;
+  border-radius: 25px;
+  
+}
+
+// All meds content
+.all-meds-card-content {
+  padding: 1.5em !important;
 }

@@ -3,16 +3,20 @@
             <ul>
                 <% @reminders.each do |reminder|%>
                     <% if reminder.medicine.present? %> 
-                        <div class="card-product"> 
-                            <div class="card-product-infos" >     
-                                <li>
-                                    <h2 class="reminder-card-title-med"><%= reminder.title %><h2>
-                                    <h3>Hora do Alarme: <%= reminder.alarm_time.strftime("%d/%m/%Y %H:%M") %><h3>
-                                    <% if reminder.content.present? %>
-                                        <h3>Descrição: <%= reminder.content %><h3>
-                                    <% end %>
-                                    <h3>Medicação: <%= reminder.medicine_dose %></h3>
-                                </li>
+                        <div class="card-product-meds mb-3"> 
+                            <div class="card-product-infos-meds" >
+                              <div class="card-header">
+                                <%= render 'shared/header_cards', reminder: reminder %>   
+                              </div>
+                                <div class="card-med-content p-3">
+                                  <li>
+                                      <h2 class="reminder-card-title-med"><%= reminder.title %><h2>
+                                      <% if reminder.content.present? %>
+                                        <h3>Medicação: <strong><%= reminder.medicine_dose %></strong></h3> 
+                                      <% end %>
+                                      <h3><i><%= reminder.content %></i><h3>
+                                  </li>
+                                </div>
                             </div>
                         </div>
                     <% end %> 
@@ -20,14 +24,16 @@
             </ul>
         </div>
 
-        <div class="col-4 col-sm-4">
-            <h1>Todos os seus medicamentos: </h1>
+        <div class="all-meds col-4 col-sm-4">
+          <div class="all-meds-card-content">
+            <h1 class="all-meds-title">Todos os seus medicamentos: </h1>
             <% @current_user.medicines.each do |medicine|%>
                 <% if medicine.present? %> 
-                    <h1>
+                    <h1 class="med-names">
                         <%= medicine.name %> 
                     </h1>
                 <% end %>    
             <% end %>   
+          </div>
         </div> 
     </div>
