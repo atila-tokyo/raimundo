@@ -3,21 +3,17 @@
           <% @reminders.each do |reminder| %>
             <% unless reminder.medicine.present? %>
               <div class="d-flex flex-column">
-                <div class="event-card-col col-12 col-sm-12 card-product-meds mb-3">
-                      <div class="card-product-infos-meds" >
+                <div class="event-card-col card-product-meds col-12 col-sm-12  mb-3">
+                    <div class="card-product-infos-meds" >
                         <div class="card-header">
                           <%= render 'shared/header_cards', reminder: reminder %>
                         </div>
 
-                          <div class="card-body">
+                          <div class="card-body collapse" id="collapseExample<%= reminder.id %>">
                             <h5 class="card-title-center"><%= reminder.title %></h5>
                             <p class="card-text-center"><%= reminder.content %></p>
-
-                          <div class="card-body collapse" id="collapseExample<%= reminder.id %>">
-                            <h5 class="card-title"><%= reminder.title %></h5>
-                            <p class="card-text"><%= reminder.content %></p>
-
                           </div>
+
                         </div>
                       </div>
                     <% end %>
