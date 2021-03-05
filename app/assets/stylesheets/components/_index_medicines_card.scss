@@ -33,10 +33,38 @@ li {
   position: fixed;
   right: 2rem;
   border-radius: 25px;
-  
+  width: 509px;
+  padding: 0px !important;
 }
 
 // All meds content
 .all-meds-card-content {
-  padding: 1.5em !important;
+  padding: 2em !important;
+}
+
+//Header for all meds card
+.card-header.all-the-meds {
+  background: #FF3F00;
+  width: 508px;
+  height: 50px;
+  margin-right: 0px;
+}
+
+// Header title card all meds
+.your-meds-title {
+  color: #f1f1f1;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+// Med names inside "All Meds" card
+.med-names {
+  font-family: "Montserrat", sans-serif !important;
+  text-align: center;
+}
+
+.event-card-col {
+  padding-left: 0px;
+  padding-right: 0px;
 }
