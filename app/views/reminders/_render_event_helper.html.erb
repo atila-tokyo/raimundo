@@ -1,0 +1,23 @@
+<!-- tab-pane-event start -->
+<div class="row">
+        <div class="col-12 col-sm-12">
+                <ul>
+                    <% @reminders.each do |reminder| %>
+                        <% unless reminder.medicine.present? %> 
+                        <div class="card-product"> 
+                            <div class="card-product-infos">  
+                                <li>
+                                    <h2><%= reminder.title %><h2>
+                                    <h3>Hora do Alarme: <%= reminder.alarm_time.strftime("%d/%m/%Y %H:%M") %><h3>
+                                    <% if reminder.content.present? %>
+                                        <h3>Descrição: <%= reminder.content %><h3>
+                                    <% end %>
+                                </li>
+                            </div>
+                        </div>
+                        <% end %> 
+                    <% end %>
+                </ul>
+        </div>
+</div>    
+<!-- tab-pane-event end -->
