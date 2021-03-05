@@ -3,14 +3,14 @@
           <% @reminders.each do |reminder| %>
             <% unless reminder.medicine.present? %>
               <div class="d-flex flex-column">
-                <div class="col-12 col-sm-12">
-                      <div class="card card-override text-white bg-primary " style="max-width: 18rem; margin:0; margin-bottom: 2rem;">
+                <div class="event-card-col col-12 col-sm-12 card-product-meds mb-3">
+                      <div class="card-product-infos-meds" >
                         <div class="card-header">
                           <%= render 'shared/header_cards', reminder: reminder %>
                         </div>
                           <div class="card-body">
-                            <h5 class="card-title"><%= reminder.title %></h5>
-                            <p class="card-text"><%= reminder.content %></p>
+                            <h5 class="card-title-center"><%= reminder.title %></h5>
+                            <p class="card-text-center"><%= reminder.content %></p>
                           </div>
                         </div>
                       </div>
