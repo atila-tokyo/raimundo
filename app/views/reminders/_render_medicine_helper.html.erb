@@ -1,0 +1,33 @@
+  <div class="row p-2">
+        <div class="col-6 col-sm-6">
+            <ul>
+                <% @reminders.each do |reminder|%>
+                    <% if reminder.medicine.present? %> 
+                        <div class="card-product"> 
+                            <div class="card-product-infos" >     
+                                <li>
+                                    <h2><%= reminder.title %><h2>
+                                    <h3>Hora do Alarme: <%= reminder.alarm_time.strftime("%d/%m/%Y %H:%M") %><h3>
+                                    <% if reminder.content.present? %>
+                                        <h3>Descrição: <%= reminder.content %><h3>
+                                    <% end %>
+                                    <h3>Medicação: <%= reminder.medicine_dose %></h3>
+                                </li>
+                            </div>
+                        </div>
+                    <% end %> 
+                <% end %>
+            </ul>
+        </div>
+
+        <div class="col-6 col-sm-6">
+            <h1>Todos os seus medicamentos: </h1>
+            <% @current_user.medicines.each do |medicine|%>
+                <% if medicine.present? %> 
+                    <h1>
+                        <%= medicine.name %> 
+                    </h1>
+                <% end %>    
+            <% end %>   
+        </div> 
+    </div>

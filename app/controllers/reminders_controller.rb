@@ -12,6 +12,8 @@ class RemindersController < ApplicationController
 
   def create
     @reminder = Reminder.new(reminder_params)
+
+    authorize @reminder
     # If it is a reminder for medicine
     # format dose and find medicine
     unless params[:search_choice].nil?

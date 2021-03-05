@@ -10,6 +10,10 @@ class ReminderPolicy < ApplicationPolicy
     owner?
   end
 
+  def new?
+    true
+  end
+
   def create?
     true
   end
