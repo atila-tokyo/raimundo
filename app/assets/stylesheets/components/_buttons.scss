@@ -1,0 +1,79 @@
+.btn-gradient {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#167FFB, #0F60C4);
+  transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
+  width: 200px;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(#147EFF, #0F67DA);
+  color: white;
+}
+
+// Update success button
+.btn-update {
+  color: #f1f1f1 !important;
+  width: 200px;
+  margin-bottom: 2em !important;
+  border-radius: 25px;
+  border: 1px solid #08c26e;
+  background: linear-gradient(#08c26e, #24b372);
+  transition: background 0.3s ease;
+  color: #eeeaea !important;
+  -webkit-box-shadow: 0 8px 6px -6px #252525;
+	   -moz-box-shadow: 0 8px 6px -6px #252525;
+	        box-shadow: 0 8px 6px -6px #252525;
+  &:hover {
+    background: linear-gradient(#15af6a, #23a86c);
+  }
+}
+
+
+// Cancel account button
+.cancel-account-button {
+  width: 200px;
+  margin-bottom: 2em !important;
+  border: 1px solid #682711;
+  background: #682711;
+  &:hover {
+    background: #5d2119;
+  }
+}
+
+// "Back to profile" and "Create" buttons
+.btn-back, .btn-create {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  width: 200px;
+  margin-bottom: 20px !important;
+  // color: #f1f1f1 !important;
+}
+
+.btn-back {
+  background: #26B6B6;
+  border: #26B6B6;
+  
+}
+
+.btn-back:hover {
+  background: #1c9999;
+}
+
+.btn-create {
+  background: #08c26e;
+  color: #eeeaea !important;
+  -webkit-box-shadow: 0 8px 6px -6px #252525;
+	   -moz-box-shadow: 0 8px 6px -6px #252525;
+	        box-shadow: 0 8px 6px -6px #252525;
+}
+
+.btn-create:hover {
+  background: #089958
+}
