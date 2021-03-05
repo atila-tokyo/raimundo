@@ -1,23 +1,22 @@
 <!-- tab-pane-event start -->
-<div class="row">
-        <div class="col-12 col-sm-12">
-                <ul>
-                    <% @reminders.each do |reminder| %>
-                        <% unless reminder.medicine.present? %> 
-                        <div class="card-product"> 
-                            <div class="card-product-infos">  
-                                <li>
-                                    <h2><%= reminder.title %><h2>
-                                    <h3>Hora do Alarme: <%= reminder.alarm_time.strftime("%d/%m/%Y %H:%M") %><h3>
-                                    <% if reminder.content.present? %>
-                                        <h3>Descrição: <%= reminder.content %><h3>
-                                    <% end %>
-                                </li>
-                            </div>
+
+          <% @reminders.each do |reminder| %>
+            <% unless reminder.medicine.present? %>
+              <div class="row">
+                <div class="col-12 col-sm-12">
+                      <div class="card card-override text-white bg-primary mb-3" style="max-width: 18rem;">
+                        <div class="card-header">
+                          <%= render 'shared/header_cards', reminder: reminder %>
                         </div>
-                        <% end %> 
+                          <div class="card-body">
+                            <h5 class="card-title"><%= reminder.title %></h5>
+                            <p class="card-text"><%= reminder.content %></p>
+                          </div>
+                        </div>
+                      </div>
                     <% end %>
-                </ul>
-        </div>
-</div>    
+                  <% end %>
+                </div>
+              </div>    
 <!-- tab-pane-event end -->
+

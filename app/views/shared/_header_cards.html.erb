@@ -1,0 +1,21 @@
+<div class="d-inline-flex justify-content-between">
+    <div class="icon-down">
+      <%= link_to "", class: "" do %>
+        <i class="fas fa-angle-down"></i>
+      <% end %>
+    </div>
+      <p class="reminder-card-title">
+        <i class="far fa-clock"></i>
+        <%= reminder.alarm_time.strftime("%d/%m/%Y %H:%M") %>
+      </p>
+      <div class="edit-and-trash-icon">
+        <%= link_to "", class: "" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+
+        <%= link_to "", class: "" do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+      </div>
+
+</div>
