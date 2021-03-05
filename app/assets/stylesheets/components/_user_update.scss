@@ -19,34 +19,6 @@
   color: #ff0606 !important;
 }
 
-// Update success button
-.btn-update {
-  color: #f1f1f1 !important;
-  width: 200px;
-  margin-bottom: 2em !important;
-  border-radius: 25px;
-  border: none;
-  background-color: #08c26e;
-  color: #eeeaea !important;
-  -webkit-box-shadow: 0 8px 6px -6px #252525;
-	   -moz-box-shadow: 0 8px 6px -6px #252525;
-	        box-shadow: 0 8px 6px -6px #252525;
-  &:hover {
-    background-color: #1c9760;
-  }
-}
-
-// Back button
-.btn-back-orange {
-  width: 200px;
-  margin-bottom: 20px !important;
-  border-radius: 25px;
-  border: none;
-  background-color: #FF9C33;
-  &:hover {
-    background-color: #df7e17;
-  }
-}
 
 // Cancel account title
 .cancel-account-title {
@@ -54,18 +26,5 @@
   font-weight: bold !important;
   margin-top: 0.5em;
   margin-bottom: 1em;
-}
-
-// Cancel account button
-.cancel-account-button {
-  width: 200px;
-  margin-bottom: 20px !important;
-  border-radius: 25px;
-  border: none;
-  color: #f1f1f1;
-  background-color: #FF3F00;
-  &:hover {
-    background-color: #c73606;
-  }
 }
 
