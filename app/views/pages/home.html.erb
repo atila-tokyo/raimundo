@@ -64,13 +64,13 @@
   
 <% if user_signed_in? %>
 <div class="container">
-    <div class="cards-logged">
-            <%= link_to "", class: "card-link" do %>
+    <div class="cards-logged">  
+            <%= link_to new_reminder_path, class: "card-link" do %>
                 <div class="card-logged">
-                    <i class="fas fa-coffee card-icon"></i>
+                    <i class="far fa-calendar-plus card-icon"></i>
                 
                     <h1 class="article-title">
-                        Bom dia, <%= current_user.first_name.capitalize %>
+                        Crie um novo lembrete
                     </h1>
                 </div>
             <% end %>
@@ -101,3 +101,7 @@
         </div>
     </div>
 <% end %>
+<!-- <%= link_to new_reminder_path, class: "nav-link-icon" do %>
+              <i class="far fa-plus-square fa-2x"></i>
+            <% end %> %>
+            -->

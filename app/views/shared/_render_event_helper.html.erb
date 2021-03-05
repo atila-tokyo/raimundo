@@ -8,9 +8,15 @@
                         <div class="card-header">
                           <%= render 'shared/header_cards', reminder: reminder %>
                         </div>
+
                           <div class="card-body">
                             <h5 class="card-title-center"><%= reminder.title %></h5>
                             <p class="card-text-center"><%= reminder.content %></p>
+
+                          <div class="card-body collapse" id="collapseExample<%= reminder.id %>">
+                            <h5 class="card-title"><%= reminder.title %></h5>
+                            <p class="card-text"><%= reminder.content %></p>
+
                           </div>
                         </div>
                       </div>

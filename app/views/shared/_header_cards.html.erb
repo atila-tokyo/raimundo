@@ -1,19 +1,20 @@
 <div class="header-med d-inline-flex justify-content-between w-100">
     <div class="icon-down">
-      <%= link_to "", class: "" do %>
+      <a class="" data-toggle="collapse" href="#collapseExample<%= reminder.id %>" role="button" aria-expanded="false" aria-controls="collapseExample">
         <i class="fas fa-angle-down"></i>
-      <% end %>
+      </a>
+        
     </div>
       <p class="reminder-card-title">
         <i class="far fa-clock"></i>
         <%= reminder.alarm_time.strftime("%d/%m/%Y %H:%M") %>
       </p>
       <div class="edit-and-trash-icon">
-        <%= link_to "", class: "" do %>
+        <%= link_to edit_reminder_path(reminder), class: "" do %>
           <i class="fas fa-edit"></i>
         <% end %>
 
-        <%= link_to "", class: "" do %>
+        <%= link_to reminder_path(reminder), method: :delete, data: { confirm: "Remover Lembrete?" } do %>
           <i class="fas fa-trash"></i>
         <% end %>
       </div>
