@@ -33,9 +33,18 @@ class RemindersController < ApplicationController
   def edit
   end
 
-  # def update
-  #   @reminder =
-  # end
+  def update
+    @reminder.update(reminder_params)
+    # If it is a reminder for medicine
+    # format dose and find medicine
+    unless params[:search_choice].nil?
+      @reminder.medicine_dose = dose_format(params.dig(:reminder, :medicine_dose), params[:search_choice])
+      @reminder.medicine = find_medicine
+    end
+    @reminder.alarm_time = date_format(params.dig(:reminder, :alarm_time))
+
+    redirect_to reminders_path
+  end
 
   def destroy
     @reminder.destroy
