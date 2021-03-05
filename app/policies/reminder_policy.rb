@@ -26,7 +26,7 @@ class ReminderPolicy < ApplicationPolicy
     owner?
   end
 
-  def destroy
+  def destroy?
     owner?
   end
 
