@@ -36,5 +36,5 @@ document.addEventListener('turbolinks:load', () => {
 	// initSelect2();
 	autocompleteSearch();
 	datepicker();
-	changeBtnName();
+	// changeBtnName();
 });
