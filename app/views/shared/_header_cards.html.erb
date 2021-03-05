@@ -10,7 +10,7 @@
         <%= reminder.alarm_time.strftime("%d/%m/%Y %H:%M") %>
       </p>
       <div class="edit-and-trash-icon">
-        <%= link_to "", class: "" do %>
+        <%= link_to edit_reminder_path(reminder), class: "" do %>
           <i class="fas fa-edit"></i>
         <% end %>
 
