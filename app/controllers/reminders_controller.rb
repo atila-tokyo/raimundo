@@ -1,5 +1,5 @@
 class RemindersController < ApplicationController
-  before_action :set_reminder, only: %i[edit update]
+  before_action :set_reminder, only: %i[edit update destroy]
 
   def index
     @reminders = policy_scope(Reminder).order(created_at: :desc)
@@ -36,6 +36,11 @@ class RemindersController < ApplicationController
   # def update
   #   @reminder =
   # end
+
+  def destroy
+    @reminder.destroy
+    redirect_to reminders_path
+  end
 
   private
 

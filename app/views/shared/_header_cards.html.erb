@@ -14,7 +14,7 @@
           <i class="fas fa-edit"></i>
         <% end %>
 
-        <%= link_to "", class: "" do %>
+        <%= link_to reminder_path(reminder), method: :delete, data: { confirm: "Remover Lembrete?" } do %>
           <i class="fas fa-trash"></i>
         <% end %>
       </div>
