@@ -25,15 +25,16 @@
         </div>
 
         <div class="all-meds col-4 col-sm-4">
+        <div class="card-header all-the-meds"></div>
           <div class="all-meds-card-content">
-            <h1 class="all-meds-title">Todos os seus medicamentos: </h1>
+            <h1 class="all-meds-title">Seus medicamentos: </h1>
             <% @current_user.medicines.each do |medicine|%>
                 <% if medicine.present? %> 
                     <h1 class="med-names">
                         <%= medicine.name %> 
                     </h1>
                 <% end %>    
-            <% end %>   
+            <% end %>
           </div>
         </div> 
     </div>

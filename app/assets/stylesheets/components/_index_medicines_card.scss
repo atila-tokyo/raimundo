@@ -33,10 +33,18 @@ li {
   position: fixed;
   right: 2rem;
   border-radius: 25px;
-  
+  padding: 0px !important;
+  border-color: #FF3F00 1px;
 }
 
 // All meds content
 .all-meds-card-content {
-  padding: 1.5em !important;
+  padding: 2em !important;
+}
+
+//Header for all meds card
+.card-header.all-the-meds {
+  background: #FF3F00;
+  width: 404px;
+  height: 50px;
 }
