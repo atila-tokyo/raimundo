@@ -1,9 +1,9 @@
-<div id="edit-form-reminder">
-    
+<div id="edit-form-reminder" class="container mt-5">
+    <h1 class="reminder-title"><strong>Editar Lembrete</strong></h1>
     <% if @reminder.medicine.present? %>
-        <%= render "form", reminder: @reminder, button_name: "Editar Lembrete" %>
+        <%= render "form", reminder: @reminder, button_name: "Salvar Alterações" %>
     <% else %>
-        <%= render "form_event", reminder: @reminder, button_name: "Editar Lembrete" %>
+        <%= render "form_event", reminder: @reminder, button_name: "Salvar Alterações" %>
     <% end %>
 
 </div>
