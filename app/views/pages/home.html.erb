@@ -65,7 +65,7 @@
 <% if user_signed_in? %>
 <div class="container">
     <div class="cards-logged">  
-            <%= link_to new_reminder_path, class: "card-link" do %>
+            <%= link_to new_reminder_path, class: "card-link home-cards" do %>
                 <div class="card-logged">
                     <i class="far fa-calendar-plus card-icon"></i>
                 
@@ -74,7 +74,7 @@
                     </h1>
                 </div>
             <% end %>
-            <%= link_to reminders_path, class: "card-link" do %>
+            <%= link_to reminders_path, class: "card-link home-cards" do %>
                 <div class="card-logged">
                     <i class="far fa-calendar-alt card-icon"></i>
                     <h1 class="article-title">
@@ -82,7 +82,7 @@
                     </h1>
                 </div>
             <% end %>
-            <%= link_to "", class: "card-link" do %>
+            <%= link_to "", class: "card-link home-cards" do %>
                 <div class="card-logged">
                     <i class="fas fa-question card-icon"></i>
                     <h1 class="article-title">
@@ -90,7 +90,7 @@
                     </h1>
                 </div>
             <% end %>
-            <%= link_to "", class: "card-link" do %>
+            <%= link_to "", class: "card-link home-cards" do %>
                 <div class="card-logged">
                     <i class="fas fa-bars card-icon"></i>
                     <h1 class="article-title">
