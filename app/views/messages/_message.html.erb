@@ -1,7 +1,16 @@
 <div class="message-container" id="message-<%= message.id %>">
+    <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.profile_picture,
+            width: 56, height: 56, crop: :thumb, gravity: :face,
+            class: "avatar dropdown-toggle", id: "navbarDropdown", 
+                            data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false 
+                %>
+    <% else %>
+        <%= image_tag current_user.profile_picture, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <% end %>
     <i class="author">
         <span><%= message.user.username %></span>
-        <small><%= I18n.l(message.created_at, format: :long) %></small>
+        <small class="time-right"><%= I18n.l(message.created_at, format: :long) %></small>
     </i>
     <p><%= message.content %></p>
 </div>
