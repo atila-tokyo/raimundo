@@ -22,7 +22,7 @@
                   <%= f.input :first_name, label: false, input_html: { placeholder: "ex: Raimundo", class: "form-control"} %>
               </div> 
             -->
-            <%= f.input :first_name, input_html: { placeholder: "ex: Raimundo", class: "form-control"},
+            <%= f.input :first_name, class: "dark-label-or", input_html: { placeholder: "ex: Raimundo", class: "form-control"},
                 label: add_tooltip_to_label("Nome", "Nome é necessário")
             
             %>
@@ -38,7 +38,7 @@
             <%= f.input :username, input_html: { placeholder: "ex: raimundo_nonato" }, 
                 label: "Nome de usuário"
             %>
-            <%= f.input :photo, as: :file, label: "Coloque um foto sua"
+            <%= f.input :photo, as: :file, label: "Coloque uma foto sua"
             %>
             <%= f.input :password,
                         required: true,
@@ -49,7 +49,7 @@
             <%= f.input :password_confirmation,
                         required: true,
                         input_html: { autocomplete: "new-password" },
-                        label: "Confirma sua senha"
+                        label: "Confirme sua senha"
                         %>
         </div>
 
