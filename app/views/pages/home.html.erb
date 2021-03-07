@@ -2,14 +2,14 @@
     <%# Home page banner %>
     <div id="banner-welcome">
         <div class="home-banner">
-        <h1 class="home-title"><strong>Raimundo</strong></h1>
-        <h2 class="home-subtitle">Descomplique-se, viva mais!</h2>
-        <h3 class="img-home"><%= image_tag "home-img.png" %></h3>
-        <div class="home-buttons justify-content-between">
-            <%= link_to "Cadastrar", new_user_registration_path, class: "sign-up-btn btn btn-primary btn-lg" %>
-            <%= link_to "Entrar", new_user_session_path, class: "login-btn btn btn-primary btn-lg" %>
+            <h1 class="home-title"><strong>Raimundo</strong></h1>
+            <h2 class="home-subtitle">Descomplique-se, viva mais!</h2>
+            <h3 class="img-home"><%= image_tag "home-img.png" %></h3>
+            <div class="home-buttons justify-content-between">
+                <%= link_to "Cadastrar", new_user_registration_path, class: "sign-up-btn btn btn-primary btn-lg" %>
+                <%= link_to "Entrar", new_user_session_path, class: "login-btn btn btn-primary btn-lg" %>
+            </div>
         </div>
-    </div>
 
     <%# Home page content (opportunity cards) %>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -18,7 +18,7 @@
     <div class="home-content-layout">
       <div class="home-content">
           <div class="container home-content">
-          <h2 class="opportunities text-center">Oportunidades</h2>
+            <h2 class="opportunities text-center">Oportunidades</h2>
           <div class="cards">
           <div class="card">
               <%= image_tag "undraw_medical_care_movn.svg" %>
