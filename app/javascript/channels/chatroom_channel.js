@@ -9,7 +9,7 @@ const initChatroomCable = () => {
 			{ channel: 'ChatroomChannel', id: id },
 			{
 				received(data) {
-					console.log(data);
+					messagesContainer.insertAdjacentHTML('beforeend', data);
 				},
 			}
 		);
