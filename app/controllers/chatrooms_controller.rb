@@ -1,4 +1,6 @@
 class ChatroomsController < ApplicationController
+  before_action :set_chatroom, only: %i[edit update destroy]
+
   def index
     @chatrooms = policy_scope(Chatroom).order(created_at: :desc)
   end
@@ -9,6 +11,16 @@ class ChatroomsController < ApplicationController
   end
 
   def create
+    @chatroom = Chatroom.new(chatroom_params)
+    authorize @chatroom
+
+    @chatroom.user = current_user
+
+    if @chatroom.save
+      redirect_to chatrooms_path
+    else
+      render :new
+    end
   end
 
   def show
