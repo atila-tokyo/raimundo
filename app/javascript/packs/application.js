@@ -24,7 +24,7 @@ ActiveStorage.start();
 // ----------------------------------------------------
 import { autocompleteSearch } from '../components/autocomplete';
 import { datepicker } from '../components/date_flatpicker';
-import { changeBtnName } from '../components/changeBtnNameEdit';
+import { initChatroomCable } from '../channels/chatroom_channel';
 // External imports
 import 'bootstrap';
 
