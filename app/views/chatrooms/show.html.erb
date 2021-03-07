@@ -2,7 +2,7 @@
 
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
-        <div class="message-container" id="<%= message.id %>">
+        <div class="message-container" id="message-<%= message.id %>">
             <i class="author">
                 <span><%= message.user.username %></span>
                 <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
@@ -11,3 +11,9 @@
         </div>
     <% end %>    
 </div>
+
+
+
+<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+    <%= f.input :content, label: false, placeholder: "Message: #{@chatroom.name}" %>
+<% end %>
