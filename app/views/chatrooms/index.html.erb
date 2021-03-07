@@ -1,0 +1,21 @@
+<% if user_signed_in? %>
+  <div class="container">
+    <%= link_to new_chatroom_path, class: "card-link home-cards" do %>
+      <div class="card-logged">
+        <i class="fas fa-user-friends card-icon"></i>
+        <h1 class="article-title">
+          Crie uma nova conversa
+        </h1>
+      </div>
+    <% end %>
+
+
+    <% if policy(Chatroom).index? %>
+      <% @chatrooms.each do |chatroom| %>
+        <h2><%= chatroom.name %></h2>
+      <% end %>
+    <% end %>
+
+    
+  </div>
+<% end %>
