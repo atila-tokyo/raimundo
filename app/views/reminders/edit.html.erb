@@ -1,9 +1,12 @@
-<div id="edit-form-reminder" class="container mt-5">
-    <h1 class="reminder-title"><strong>Editar Lembrete</strong></h1>
-    <% if @reminder.medicine.present? %>
+<body class="radial-grad-background">
+  <div class="container d-flex flex-column align-items-center justify-center pt-5">
+    <div class="form-card">
+      <h1 class="reminder-title text-center"><strong>Editar Lembrete</strong></h1>
+      <% if @reminder.medicine.present? %>
         <%= render "form", reminder: @reminder, button_name: "Salvar Alterações" %>
-    <% else %>
+      <% else %>
         <%= render "form_event", reminder: @reminder, button_name: "Salvar Alterações" %>
-    <% end %>
-
-</div>
+      <% end %>
+    </div>
+  </div>
+</body>

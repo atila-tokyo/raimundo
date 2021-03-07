@@ -2,6 +2,10 @@ header {
   width: 100%;
 }
 
+.radial-grad-background {
+  background: radial-gradient(51.28% 51.28% at 48.72% 57.34%, #5FD6F1 0%, #1D95B4 100%);
+}
+
 // Reminder card header
 .card-header {
   background-color: #EBAB57;
