@@ -1,9 +1,9 @@
 import consumer from './consumer';
 
 const initChatroomCable = () => {
-	const messagesContainer = document.getElementById('messagesContainer');
+	const messagesContainer = document.getElementById('messages');
 	if (messagesContainer) {
-		const id = messagesContainer.dataset.chatroom.id;
+		const id = messagesContainer.dataset.chatroomId;
 
 		consumer.subscriptions.create(
 			{ channel: 'ChatroomChannel', id: id },
