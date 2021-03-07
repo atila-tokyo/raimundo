@@ -1,0 +1,19 @@
+<div class="header-med d-inline-flex justify-content-between w-100">
+    <div class="icon-down">
+      <a class="" data-toggle="collapse" href="#collapseExample<%= "reminder.id" %>" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <i class="fas fa-angle-down"></i>
+      </a>
+        
+    </div>
+      <div class="edit-and-trash-icon">
+        <%= link_to "", class: "" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+
+        <%= link_to "", method: :delete, data: { confirm: "Remover Conversa?" } do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+      </div>
+
+     
+</div>
