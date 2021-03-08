@@ -47,8 +47,12 @@ class ChatroomsController < ApplicationController
   end
 
   def show
-    @chatrooms = policy_scope(Chatroom, policy_scope_class: ChatroomPolicy::Scope).order(created_at: :desc)
-
+    @result = []
+    chatrooms = policy_scope(Chatroom).order(created_at: :desc)
+    member = current_user.part_of
+    @result << chatrooms
+    @result << member
+    @result.flatten!
     @message = Message.new
     @messages = @chatroom.messages
     authorize @message

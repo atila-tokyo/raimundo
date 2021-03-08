@@ -1,6 +1,7 @@
 <div class="d-flex">
-  <div class="list-grou w-200px bg-white br-light">
-    <% @chatrooms.each do |chatroom| %>
+  <div class="list-group w-200px bg-white br-light">
+   
+    <% @result.each do |chatroom| %>
       <%= link_to "#{chatroom.name}", chatroom_path(chatroom), 
                 class: "list-group-item #{'active' if chatroom == @chatroom}" 
             %>
