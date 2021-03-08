@@ -19,7 +19,15 @@ class ChatroomsController < ApplicationController
     authorize @chatroom
 
     if @chatroom.save
-      flash[:success] = "Conversa #{@chatroom.name} foi criada com sucesso"
+      users = User.find(params[:chatroom][:users])
+
+      users.each do |user|
+        Guest.create(
+          user: user,
+          chatroom: @chatroom
+        )
+      end
+
       redirect_to chatrooms_path
     else
       render :new
@@ -59,6 +67,5 @@ class ChatroomsController < ApplicationController
   end
 
   def autorized_users
-    
   end
 end
