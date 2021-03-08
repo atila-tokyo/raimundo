@@ -5,7 +5,7 @@
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <div class="nav-item mr-auto nav-avatar-vertical-line">
         <li class="nav-item dropdown">
-
+          
           <% if current_user.photo.attached? %>
             <%= cl_image_tag current_user.profile_picture,
                 width: 56, height: 56, crop: :thumb, gravity: :face,
@@ -28,7 +28,7 @@
         
         </li>
           <div class="nav-item mr-auto user-name">
-            <h2><%= current_user.first_name.capitalize %></h2>
+            <h2 class="username-navbar"><%= current_user.first_name.capitalize %></h2>
           </div>
           <div class="nav-item divider-right collapse navbar-collapse"></div>
       </div>
