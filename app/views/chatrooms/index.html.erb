@@ -1,38 +1,32 @@
 <% if user_signed_in? %>
-  <div class="container">
-    <%= link_to new_chatroom_path, class: "card-link home-cards" do %>
-      <div class="card-logged">
-        <i class="fas fa-user-friends card-icon"></i>
-        <h1 class="article-title">
-          Crie uma nova conversa
-        </h1>
-      </div>
-    <% end %>
-    <% if @chatrooms.present? %>
-      <h1 class="text-center my-5">Suas Conversas</h1>
-      <% if policy(Chatroom) %>
-        <% @chatrooms.each do |chatroom| %>
-          <div>
-            <%= link_to chatroom_path(chatroom) do %>
-              <%= render "card_chatroom", chatroom: chatroom %>
-            <% end %>
+  <div class="container mt-5">
+    <div class="row w-100">
+      <div class="col-8 w-100">
+        <%= link_to new_chatroom_path, class: "card-link home-cards" do %>
+          <div class="card-logged w-75">
+            <i class="card-icon fas fa-user-plus"></i>
+            <h1 class="article-title">
+              Crie uma nova conversa
+            </h1>
           </div>
         <% end %>
-      <% end %>
-    <% end %>
-    <% unless @member.empty? %>
-          <% @member.each do |chatroom| %>
-            <div>
-            
-              <%= link_to chatroom_path(chatroom) do %>
-                <%= render "card_chatroom", chatroom: chatroom %>
+      </div>
+      <div class="col-4 w-100">
+        <% if @result.present? %>
+          <h1 class="your-chats reminder-title mb-5">Suas Conversas</h1>
+          <% if policy(Chatroom) %>
+            <table class="table table-dark">
+              <% @result.each do |chatroom| %>
+                <div>
+                    <%= render "card_chatroom", chatroom: chatroom %>
+                </div>
               <% end %>
-            </div>
-        <% end %>     
-    <% end %>
-    <% if @member.empty? && @chatrooms.empty? %>
-        <h2>Não tem conversas ainda</h2>
-    <% end %>
+            </table>
+          <% end %>
+        <% else %>
+          <h2>Não tem conversas ainda</h2>
+        <% end %>
+      </div>
+    </div>
   </div>
 <% end %>
-

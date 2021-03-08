@@ -1,22 +1,30 @@
-<div class="d-flex justify-content-center align-items-center flex-column">
-  <div class="event-card-col card-product-meds my-3 w-25">
-    <div class="card-product-infos-meds" >
-      <div class="card-header">
-        <div class="header-med d-inline-flex justify-content-between w-100">
-          <p class="reminder-card-title text-center">
-            <%= chatroom.name %>
-          </p>
-          <div class="edit-and-trash-icon">
-            <%= link_to edit_chatroom_path(chatroom), class: "" do %>
-              <i class="fas fa-edit"></i>
-            <% end %>
-            <%= link_to chatroom_path(chatroom), method: :delete, data: { confirm: "Remover Conversa?" } do %>
-              <i class="fas fa-trash"></i>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="d-flex justify-content-center links-style">
+  <thead>
+    <tr>
+      <th scope="col">Nome da conversa</th>
+      <th scope="col">Seus amigos no grupo</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Deletar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+        <%= link_to chatroom.name, chatroom_path(chatroom) %>
+      </th>
+      <td>
+        <%= chatroom.users.map(&:username).join(", ") %>
+      </td>
+      <td>
+        <%= link_to edit_chatroom_path(chatroom), class: "" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to chatroom_path(chatroom), method: :delete, data: { confirm: "Apagar Conversa?" } do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
 </div>
-      
