@@ -2,6 +2,7 @@
   justify-content: space-between;
   background: linear-gradient(90deg, #2BC0E4 0%, #6A75D5 100%);
   list-style-type: none;
+  padding-left: 0;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -14,7 +15,11 @@
 }
 
 .nav-item {
-  padding-left: 0em;
+  padding-left: 1em;
+}
+
+.nav-item.dropdown {
+  padding-left: 0;
 }
 
 .navbar-nav .nav-link {
@@ -48,7 +53,7 @@
 // user name nav-bar
 .user-name h2 {
   padding-top: .25em;
-  padding-left: .5em;
+  padding-left: .2em;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: #222222;
@@ -57,4 +62,27 @@
 .navbar-toggler {
   margin-top: 1em;
   margin-left: 1.5em;
+}
+
+//Item selection in the dropdown
+.dropdown-item {
+  font-weight: 600;
+  margin-right: 0;
+
+  &:hover {
+    background-color: #1D5063;
+    color: #F1F1F1;
+  }
+}
+
+//Navbar options card
+.dropdown-menu.show {
+  width: 13.5em;
+  margin-top: 0.8em;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.dropdown-menu {
+  font-size: 1.2rem;
 }
