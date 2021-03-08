@@ -1,5 +1,5 @@
 class ChatroomsController < ApplicationController
-  before_action :set_chatroom, only: %i[edit update destroy]
+  before_action :set_chatroom, only: %i[show edit update destroy]
 
   def index
     @chatrooms = policy_scope(Chatroom).order(created_at: :desc)
@@ -12,23 +12,38 @@ class ChatroomsController < ApplicationController
 
   def create
     @chatroom = Chatroom.new(chatroom_params)
-    authorize @chatroom
 
     @chatroom.user = current_user
 
+    authorize @chatroom
+
     if @chatroom.save
+      flash[:success] = "Conversa #{@chatroom.name} foi criada com sucesso"
       redirect_to chatrooms_path
     else
       render :new
     end
   end
 
+  def edit
+  end
+
+  def update
+    @chatroom.update(chatroom_params)
+
+    redirect_to chatrooms_path
+  end
+
   def show
-    @chatrooms = Chatroom.all
-    @chatroom = Chatroom.find(params[:id])
+    @chatrooms = policy_scope(Chatroom).order(created_at: :desc)
     @message = Message.new
-    authorize @chatroom
+
     authorize @message
+  end
+
+  def destroy
+    @chatroom.destroy
+    redirect_to chatrooms_path
   end
 
   private
@@ -38,7 +53,7 @@ class ChatroomsController < ApplicationController
   end
 
   def set_chatroom
-    @chatroom = Message.find(params[:id])
+    @chatroom = Chatroom.find(params[:id])
     authorize @chatroom
   end
 end

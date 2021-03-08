@@ -9,12 +9,21 @@
       </div>
     <% end %>
 
-
-    <% if policy(Chatroom).index? %>
+  <% if @chatrooms.present? %>
+    <h1 class="text-center my-5">Suas Conversas</h1>
+    <% if policy(Chatroom) %>
       <% @chatrooms.each do |chatroom| %>
-        <h2><%= chatroom.name %></h2>
+        <div>
+          
+          <%= link_to chatroom_path(chatroom) do %>
+            <%= render "card_chatroom", chatroom: chatroom %>
+          <% end %>
+        </div>
       <% end %>
     <% end %>
+  <% else %>
+      Não tem conversas ainda
+  <% end %>
 
     
   </div>
