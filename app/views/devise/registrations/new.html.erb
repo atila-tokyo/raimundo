@@ -23,11 +23,11 @@
               </div> 
             -->
             <%= f.input :first_name, input_html: { placeholder: "ex: Raimundo", class: "form-control"},
-                label: add_tooltip_to_label("Nome", "Nome é necessário")
+                label: add_tooltip_to_label("Nome", "Nome é necessário"), label_html: { class: "text-black" }
             
             %>
             <%= f.input :last_name, input_html: { placeholder: "ex: Nonato", class: "form-control" },
-                label: "Sobrenome"
+                label: "Sobrenome", label_html: { class: "text-black" }
             %>
 
             
@@ -36,7 +36,7 @@
                         autofocus: true
                         %>
             <%= f.input :username, input_html: { placeholder: "ex: raimundo_nonato" }, 
-                label: "Nome de usuário"
+                label: "Nome de usuário", label_html: { class: "text-black" }
             %>
             <%= f.input :photo, as: :file, label: "Coloque um foto sua"
             %>
@@ -44,7 +44,8 @@
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                         input_html: { autocomplete: "new-password" }, 
-                        label: "Senha"
+                        label: "Senha",
+                        hint_html: { class: "text-black" }
                         %>
             <%= f.input :password_confirmation,
                         required: true,
