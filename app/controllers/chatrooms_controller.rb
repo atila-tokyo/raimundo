@@ -2,7 +2,8 @@ class ChatroomsController < ApplicationController
   before_action :set_chatroom, only: %i[show edit update destroy]
 
   def index
-    @chatrooms = policy_scope(Chatroom)
+    @chatrooms = policy_scope(Chatroom).order(created_at: :desc)
+    @member = current_user.part_of
   end
 
   def new
