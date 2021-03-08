@@ -3,8 +3,8 @@
     <div class="row w-100">
       <div class="col-8 w-100">
         <%= link_to new_chatroom_path, class: "card-link home-cards" do %>
-          <div class="card-logged w-50">
-            <i class="fas fa-user-friends card-icon"></i>
+          <div class="card-logged w-75">
+            <i class="card-icon fas fa-user-plus"></i>
             <h1 class="article-title">
               Crie uma nova conversa
             </h1>
@@ -13,7 +13,7 @@
       </div>
       <div class="col-4 w-100">
         <% if @chatrooms.present? %>
-          <h1 class="text-center my-5">Suas Conversas</h1>
+          <h1 class="your-chats reminder-title mb-5">Suas Conversas</h1>
           <% if policy(Chatroom) %>
             <% @chatrooms.each do |chatroom| %>
               <div>
