@@ -2,7 +2,7 @@ class ChatroomPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       # scope ===> Reminder
-      scope.where(user: user) || scope.where(user_recipient: user)
+      scope.where(user: user)
     end
   end
 
