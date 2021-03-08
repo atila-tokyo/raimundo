@@ -46,4 +46,8 @@ class User < ApplicationRecord
        { value: login.strip.downcase }]
     ).first
   end
+
+  def part_of
+    Guest.where(user_id: id).map(&:chatroom)
+  end
 end

@@ -11,7 +11,7 @@
 
   <% if @chatrooms.present? %>
     <h1 class="text-center my-5">Suas Conversas</h1>
-    <% if policy(Chatroom) %>
+    <% if policy(Chatroom).index? %>
       <% @chatrooms.each do |chatroom| %>
         <div>
           

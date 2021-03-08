@@ -2,7 +2,7 @@ class ChatroomsController < ApplicationController
   before_action :set_chatroom, only: %i[show edit update destroy]
 
   def index
-    @chatrooms = policy_scope(Chatroom).order(created_at: :desc)
+    @chatrooms = policy_scope(Chatroom)
   end
 
   def new
@@ -19,13 +19,15 @@ class ChatroomsController < ApplicationController
     authorize @chatroom
 
     if @chatroom.save
-      users = User.find(params[:chatroom][:users])
+      if params[:chatroom][:users].present?
+        users = User.find(params[:chatroom][:users])
 
-      users.each do |user|
-        Guest.create(
-          user: user,
-          chatroom: @chatroom
-        )
+        users.each do |user|
+          Guest.create(
+            user: user,
+            chatroom: @chatroom
+          )
+        end
       end
 
       redirect_to chatrooms_path
@@ -44,7 +46,8 @@ class ChatroomsController < ApplicationController
   end
 
   def show
-    @chatrooms = policy_scope(Chatroom).order(created_at: :desc)
+    @chatrooms = policy_scope(Chatroom, policy_scope_class: ChatroomPolicy::Scope).order(created_at: :desc)
+
     @message = Message.new
     @messages = @chatroom.messages
     authorize @message
