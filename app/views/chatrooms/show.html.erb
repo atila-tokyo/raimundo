@@ -10,7 +10,7 @@
     <h1 class="text-center"><%= @chatroom.name %></h1>
     <div>
       <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-        <% @chatroom.messages.each do |message| %>
+        <% @messages.each do |message| %>
           <%= render 'messages/message', message: message %>
         <% end %>
       </div>

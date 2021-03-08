@@ -38,7 +38,7 @@ class ChatroomsController < ApplicationController
   def show
     @chatrooms = policy_scope(Chatroom).order(created_at: :desc)
     @message = Message.new
-
+    @messages = @chatroom.messages
     authorize @message
   end
 
@@ -50,7 +50,7 @@ class ChatroomsController < ApplicationController
   private
 
   def chatroom_params
-    params.require(:chatroom).permit(:name, :user_recipient)
+    params.require(:chatroom).permit(:name)
   end
 
   def set_chatroom
@@ -59,6 +59,6 @@ class ChatroomsController < ApplicationController
   end
 
   def autorized_users
-    User.find_by_name(params[:user_recipient])
+    
   end
 end
