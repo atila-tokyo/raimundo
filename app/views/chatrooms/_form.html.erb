@@ -3,7 +3,7 @@
              
     
     <%= f.input :users, label: "Escolha seus amigos para conversar", collection: User.all.map { |user| [user.username, user.id] },
-        input_html: { multiple: true }, include_hidden: false %> 
+        input_html: { multiple: true, class: "select2" }, include_hidden: false %> 
     
     <div class="d-flex justify-content-between">
       <%= link_to "Voltar ao Perfil",  root_path, class: 'btn-back btn btn-primary mt-2 mb-5'  %>
