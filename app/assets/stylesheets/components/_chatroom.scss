@@ -1,4 +1,8 @@
-  
+// New chatroom page
+.radial-background {
+  background: radial-gradient(51.28% 51.28% at 48.72% 57.34%, #5FD6F1 0%, #1D95B4 100%);
+}
+
 .chatroom {
   background: white;
   height: calc(100vh - 66px);
