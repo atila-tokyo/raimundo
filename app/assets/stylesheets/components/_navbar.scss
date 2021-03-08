@@ -67,7 +67,6 @@
 .dropdown-item {
   font-weight: 600;
   margin-right: 0;
-
   &:hover {
     background-color: #1D5063;
     color: #F1F1F1;
@@ -80,9 +79,28 @@
   margin-top: 0.8em;
   margin-left: 0 !important;
   padding-left: 0 !important;
+ 
 }
 
 .dropdown-menu {
   font-size: 1.2rem;
+}
+
+.dropdown-menu {
+  background: #2BC0E4;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  width: 12.5em;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  transform: scale(1.1);
+}
+.dropdown > .dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    display: auto;
+    pointer-events: none;
 }
 
