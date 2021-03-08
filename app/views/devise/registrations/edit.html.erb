@@ -31,24 +31,31 @@
       <%= f.input :username, 
           hint: "Deixe em branco se não quiser alterar!",
           label: "Nome de usuário",
-          class: "form-text-label"
+          class: "form-text-label",
+          label_html: { class: "text-black" },
+          hint_html: { class: "text-warning"}
       %>
       <%= f.input :first_name, 
           hint: "Deixe em branco se não quiser alterar!",
           label: "Nome",
-          class: "form-text-label"
+          class: "form-text-label",
+          label_html: { class: "text-black" },
+          hint_html: { class: "text-warning"}
       %>
       <%= f.input :last_name, 
           hint: "Deixe em branco se não quiser alterar!",
           label: "Sobrenome",
-          class: "form-text-label"
+          class: "form-text-label",
+          label_html: { class: "text-black" },
+          hint_html: { class: "text-warning"}
       %>
       <%= f.input :password,
                   hint: "Deixe em branco se não quiser alterar!",
                   required: false,
                   input_html: { autocomplete: "new-password" }, 
                   label: "Senha",
-                  class: "form-text-label"
+                  class: "form-text-label",
+                  hint_html: { class: "text-warning"}
                   %>
       <%= f.input :password_confirmation,
                   required: false,
@@ -61,7 +68,8 @@
                   required: true,
                   input_html: { autocomplete: "current-password" },
                   label: "Senha atual",
-                  class: "form-text-label"
+                  class: "form-text-label",
+                  hint_html: { class: "text-warning"}
                   %>
     </div>
 
