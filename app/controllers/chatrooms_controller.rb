@@ -1,13 +1,8 @@
 class ChatroomsController < ApplicationController
   before_action :set_chatroom, only: %i[show edit update destroy]
+  before_action :authorized_users, only: %i[index show]
 
   def index
-    @result = []
-    chatrooms = policy_scope(Chatroom).order(created_at: :desc)
-    member = current_user.part_of
-    @result << chatrooms
-    @result << member
-    @result.flatten!
   end
 
   def new
@@ -51,12 +46,6 @@ class ChatroomsController < ApplicationController
   end
 
   def show
-    @result = []
-    chatrooms = policy_scope(Chatroom).order(created_at: :desc)
-    member = current_user.part_of
-    @result << chatrooms
-    @result << member
-    @result.flatten!
     @message = Message.new
     @messages = @chatroom.messages
     authorize @message
@@ -78,6 +67,12 @@ class ChatroomsController < ApplicationController
     authorize @chatroom
   end
 
-  def autorized_users
+  def authorized_users
+    @result = []
+    chatrooms = policy_scope(Chatroom).order(created_at: :desc)
+    member = current_user.part_of
+    @result << chatrooms
+    @result << member
+    @result.flatten!
   end
 end
