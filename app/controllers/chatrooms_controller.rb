@@ -3,6 +3,7 @@ class ChatroomsController < ApplicationController
 
   def index
     @chatrooms = policy_scope(Chatroom).order(created_at: :desc)
+    @member = current_user.part_of
   end
 
   def new
@@ -19,13 +20,15 @@ class ChatroomsController < ApplicationController
     authorize @chatroom
 
     if @chatroom.save
-      users = User.find(params[:chatroom][:users])
+      if params[:chatroom][:users].present?
+        users = User.find(params[:chatroom][:users])
 
-      users.each do |user|
-        Guest.create(
-          user: user,
-          chatroom: @chatroom
-        )
+        users.each do |user|
+          Guest.create(
+            user: user,
+            chatroom: @chatroom
+          )
+        end
       end
 
       redirect_to chatrooms_path
@@ -44,7 +47,12 @@ class ChatroomsController < ApplicationController
   end
 
   def show
-    @chatrooms = policy_scope(Chatroom).order(created_at: :desc)
+    @result = []
+    chatrooms = policy_scope(Chatroom).order(created_at: :desc)
+    member = current_user.part_of
+    @result << chatrooms
+    @result << member
+    @result.flatten!
     @message = Message.new
     @messages = @chatroom.messages
     authorize @message
