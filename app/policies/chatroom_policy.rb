@@ -2,12 +2,13 @@ class ChatroomPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       # scope ===> Reminder
-      scope.where(user: user)
+      scope.where(user: user) || scope.where(user_recipient: user)
     end
   end
 
   def show?
-    owner?
+    # owner? || invited?
+    true
   end
 
   def new?
@@ -34,5 +35,9 @@ class ChatroomPolicy < ApplicationPolicy
 
   def owner?
     record.user == user
+  end
+
+  def invited?
+    record.user_recipient = user
   end
 end
