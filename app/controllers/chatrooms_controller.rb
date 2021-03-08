@@ -14,6 +14,7 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.new(chatroom_params)
 
     @chatroom.user = current_user
+    # @chatroom.user_recipient = authorized_users
 
     authorize @chatroom
 
@@ -55,5 +56,9 @@ class ChatroomsController < ApplicationController
   def set_chatroom
     @chatroom = Chatroom.find(params[:id])
     authorize @chatroom
+  end
+
+  def autorized_users
+    User.find_by_name(params[:user_recipient])
   end
 end
