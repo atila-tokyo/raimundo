@@ -1,4 +1,4 @@
 class Guest < ApplicationRecord
   belongs_to :user
-  has_many :chatrooms
+  belongs_to :chatroom
 end

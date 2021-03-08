@@ -2,7 +2,8 @@
     <%= f.input :name, label: "Nome da Conversa", placeholder: "Ex: Amigos do Predio" %>
              
     
-    <%#= f.input :guest, label: "Amigo username", placeholder: "Gertrudes"%> 
+    <%= f.input :users, label: "Escolha seus amigos para conversar", collection: User.all.map { |user| [user.username, user.id] },
+        input_html: { multiple: true }, include_hidden: false %> 
     
     <div class="d-flex justify-content-between">
       <%= link_to "Voltar ao Perfil",  root_path, class: 'btn-back btn btn-primary mt-2 mb-5'  %>
