@@ -25,9 +25,7 @@
                 </tr>
               </thead>
               <% @result.each do |chatroom| %>
-                <div>
                   <%= render "card_chatroom", chatroom: chatroom %>
-                </div>
               <% end %>
             </table>
           <% end %>

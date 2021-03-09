@@ -73,6 +73,6 @@ class ChatroomsController < ApplicationController
     member = current_user.part_of
     @result << chatrooms
     @result << member
-    @result.flatten!
+    @result.flatten!.uniq!
   end
 end

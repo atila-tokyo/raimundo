@@ -2,7 +2,7 @@
     <%= f.input :name, label: "Nome da Conversa", placeholder: "Ex: Amigos do Predio" %>
              
     
-    <%= f.input :users, label: "Escolha seus amigos para conversar", collection: User.all.map { |user| [user.username, user.id] },
+    <%= f.input :users, label: "Escolha seus amigos para conversar", collection: User.where.not(id: current_user.id).map { |user| [user.username, user.id] },
         input_html: { multiple: true, class: "select2" }, include_hidden: false, label_html: { class: "usernames-chat" } %> 
     
     <div class="d-flex justify-content-between">
