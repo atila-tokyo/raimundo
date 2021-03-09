@@ -1,6 +1,6 @@
 <%= simple_form_for @photoalbum do |f| %>
-   <%= f.input :title , :label => 'nome do album' %> 
-    <%= f.input :photo, as: :file %> 
-   <%= f.submit 'Criar album', class: 'btn btn-primary' %>
+    <%= f.input :title , :label => 'nome do album' %> 
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>  
+    <%= f.submit 'Criar album', class: 'btn btn-primary' %>
    
 <% end %>

@@ -1,1 +1,9 @@
  <%= link_to 'criar album', new_photo_album_path %>
+<% if current_user.photo_albums.present? %>
+ 
+    <ul>
+        <% @photoalbums.each do |photo_album| %>
+            <li> <%=photo_album.title  %> </li>
+        <% end %>
+    </ul>
+<% end %>

@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :medicines, through: :reminders
   has_many :chatrooms, dependent: :destroy
   has_many :messages, through: :chatrooms
-  has_many :photo_album, dependent: :destroy
+  has_many :photo_albums, dependent: :destroy
 
   has_one_attached :photo, dependent: :destroy
 
