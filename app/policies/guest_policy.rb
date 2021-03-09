@@ -8,4 +8,14 @@ class GuestPolicy < ApplicationPolicy
   def index?
     true
   end
+
+  def destroy?
+    true
+  end
+
+  private
+
+  def owner?
+    record.user == user
+  end
 end
