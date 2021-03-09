@@ -13,19 +13,21 @@
       </div>
       <div class="col-6 w-100">
         <% if @result.present? %>
-          <div class ="form-card">
-            <h1 class="your-chats reminder-title">Suas Conversas</h1>
-            <% if policy(Chatroom) %>
-              <table class="table table-dark links-style text-center">
-                <thead>
-                  <tr>
-                    <th scope="col">Nome da conversa</th>
-                    <th scope="col">Seus amigos no grupo</th>
+          <div class ="form-card">                               
+          <h1 class="your-chats reminder-title">Suas Conversas</h1>
+          <% if policy(Chatroom) %>
+            <table class="table table-dark links-style text-center">
+              <thead>
+                <tr>
+                  <th scope="col">Nome da conversa</th>
+                  <th scope="col">Seus amigos no grupo</th>
+                  <% unless current_user.chatrooms.empty? %>
                     <th scope="col">Editar</th>
                     <th scope="col">Deletar</th>
-                  </tr>
-                </thead>
-                <% @result.each do |chatroom| %>
+                  <% end %>
+                </tr>
+              </thead>
+              <% @result.each do |chatroom| %>
                   <%= render "card_chatroom", chatroom: chatroom %>
                 <% end %>
               </table>
