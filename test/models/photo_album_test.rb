@@ -1,6 +1,6 @@
 require "test_helper"
 
-class FamilyAlbumsControllerTest < ActionDispatch::IntegrationTest
+class PhotoAlbumTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
