@@ -1,7 +1,9 @@
 <div class="container"> 
   <div class ="form-card">
-    <h2 class="your-chats reminder-title text-center">Você ainda não criou nenhum lembrete</h2>
-    <%= image_tag "undraw_Add_notes.svg" %>
-    <%= link_to "Criar um lembrete", new_reminder_path %>
+    <h2 class="your-chats reminder-title text-center">Ops! Você ainda não criou nenhum lembrete</h2>
+    <div class="d-inline-flex align-items-center justify-content-center">
+      <div class="mt-3"><%= image_tag "undraw_Add_notes.svg" %></div>
+      <div class="pl-5"><%= link_to "Criar um lembrete", new_reminder_path, class: "create-reminder-btn btn-back btn btn-primary" %></div>
+    </div>
   </div>
 </div>
