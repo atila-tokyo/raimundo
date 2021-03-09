@@ -46,6 +46,7 @@
               </div>
             </div>
           </div>
-        <% else %>
+        <% end %>
+        <% if current_user.reminders.empty? %>
           <%= render "shared/empty_cards" %>
         <% end %>
