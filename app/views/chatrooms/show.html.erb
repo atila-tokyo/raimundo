@@ -1,23 +1,37 @@
 <div class="d-flex">
-  <div class="list-group w-200px bg-white br-light">
-   
+  <div class="list-group w-200px br-light">
     <% @result.each do |chatroom| %>
       <%= link_to "#{chatroom.name}", chatroom_path(chatroom), 
-                class: "list-group-item #{'active' if chatroom == @chatroom}" 
+                class: "list-group-item #{'active' if chatroom == @chatroom} chats-list" 
             %>
     <% end %>
   </div>
   <div class="chatroom">
-    <h1 class="text-center"><%= @chatroom.name %></h1>
-    <div>
-      <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-        <% @messages.each do |message| %>
-          <%= render 'messages/message', message: message %>
+    <section class="msger">
+      <header class="msger-header">
+        <div class="msger-header-title">
+          <i class="fas fa-comment-alt"></i> <%= @chatroom.name %>
+        </div>
+        <div class="msger-header-options">
+          <span><i class="fas fa-cog"></i></span>
+        </div>
+      </header>
+      <main class="msger-chat">
+        <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+          <% @messages.each do |message| %>
+            <%= render 'messages/message', message: message %>
+          <% end %>
+        </div>
+      </main>
+        <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+          <div class="d-flex flex-row">
+            <div class="w-100">
+              <%= f.input :content, label: false, placeholder: "Mensagem para: #{@chatroom.name}" %>
+            </div>
+              <%= f.submit "Enviar", class: "send-msg-btn btn btn-success" %>
+          </div>
         <% end %>
-      </div>
-      <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-        <%= f.input :content, label: false, placeholder: "Message: #{@chatroom.name}" %>
-      <% end %>
+      
     </div>
-  </div>
+  </section>
 </div>

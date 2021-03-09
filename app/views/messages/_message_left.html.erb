@@ -1,0 +1,22 @@
+<div class="msg left-msg mt-4">
+  <div class="msg-img">
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag message.user.profile_picture,
+            width: 56, height: 56, crop: :thumb, gravity: :face,
+            class: "avatar dropdown-toggle", id: "navbarDropdown", 
+                            data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false 
+                %>
+    <% else %>
+        <%= image_tag current_user.profile_picture, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <% end %>
+  </div>
+  <div class="msg-bubble">
+    <div class="msg-info">
+      <div class="msg-info-name"><%= message.user.username %></div>
+      <div class="msg-info-time"><%= I18n.l(message.created_at, format: :long) %></div>
+    </div>
+    <div class="msg-text">
+      <%= message.content %>
+    </div>
+  </div>
+</div>
