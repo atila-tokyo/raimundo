@@ -77,3 +77,19 @@
 .btn-create:hover {
   background: #089958
 }
+
+.create-reminder-btn {
+  background-color: #e99e2dfe;
+  color: #f1f1f1;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  font-size: larger;
+  border-radius: 35px;
+  
+  &:hover {
+    background-color: #e78607fe;
+    color: #FFFFFF;
+  }
+}
