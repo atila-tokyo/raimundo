@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_08_133628) do
+ActiveRecord::Schema.define(version: 2021_03_09_163527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2021_03_08_133628) do
 
   create_table "chatrooms", force: :cascade do |t|
     t.string "name"
+    t.string "user_recipient"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -74,6 +75,13 @@ ActiveRecord::Schema.define(version: 2021_03_08_133628) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "photo_galleries", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_photo_galleries_on_user_id"
   end
 
   create_table "reminders", force: :cascade do |t|
@@ -111,6 +119,7 @@ ActiveRecord::Schema.define(version: 2021_03_08_133628) do
   add_foreign_key "guests", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "photo_galleries", "users"
   add_foreign_key "reminders", "medicines"
   add_foreign_key "reminders", "users"
 end
