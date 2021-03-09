@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :reminders
   resources :chatrooms do
     resources :messages, only: %i[create]
+    resources :guests, only: %i[index update destroy]
   end
 end

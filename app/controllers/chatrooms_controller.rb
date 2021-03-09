@@ -14,7 +14,6 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.new(chatroom_params)
 
     @chatroom.user = current_user
-    # @chatroom.user_recipient = authorized_users
 
     authorize @chatroom
 
@@ -31,6 +30,7 @@ class ChatroomsController < ApplicationController
       end
 
       redirect_to chatrooms_path
+      flash[:notice] = "Conversa #{@chatroom.name} criada com sucesso!"
     else
       render :new
     end
