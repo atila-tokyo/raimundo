@@ -1,0 +1,8 @@
+<% @chatroom.users.each do |guest| %>
+  <div class="d-flex-inline">
+    <%= guest.username %>
+    <%= link_to guest_path(guest, @chatroom.id), method: :delete, data: { confirm: "Remover amigo?" } do %>
+        <i class="fas fa-trash"></i>
+      <% end %>
+  </div>
+<% end %>
