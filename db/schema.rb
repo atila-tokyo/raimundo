@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2021_03_09_171713) do
   end
 
   create_table "photo_albums", force: :cascade do |t|
-    t.string "photo_gallery"
+    t.string "title"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -5,14 +5,15 @@ class PhotoAlbumsController < ApplicationController
     end
 
     def new
-        @photoalbum = PhotoAlbums.new
-        authorize @photoalbums
+        @photoalbum = PhotoAlbum.new
+        authorize @photoalbum
     end
 
     def create 
-        @photoalbum = PhotoAlbums.new(photo_album_params)
+        @photoalbum = PhotoAlbum.new(photo_album_params)
         authorize @photoalbum
 
+        @photoalbum.user = current_user
         if @photoalbum.save
             redirect_to photo_albums_path
         else
@@ -34,7 +35,7 @@ class PhotoAlbumsController < ApplicationController
     private
 
     def photo_album_params
-        params.require(:photo_album).permit(:photo_galery)
+        params.require(:photo_album).permit(:title, :photo)
     end
     
 end

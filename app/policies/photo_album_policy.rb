@@ -10,7 +10,7 @@ class PhotoAlbumPolicy < ApplicationPolicy
   end
 
   def show?
-    owner? || invited?
+    owner?
   end
 
   def new?
@@ -39,7 +39,5 @@ class PhotoAlbumPolicy < ApplicationPolicy
     record.user == user
   end
 
-  def invited?
-    user.part_of.include?(record)
-  end
+  
 end

@@ -1,5 +1,5 @@
-<%= simple_form_for :photo_Albums do |f| %>
-   <%= f.input :Photo_galery , :label => 'nome do album' %> 
+<%= simple_form_for @photoalbum do |f| %>
+   <%= f.input :title , :label => 'nome do album' %> 
     <%= f.input :photo, as: :file %> 
    <%= f.submit 'Criar album', class: 'btn btn-primary' %>
    

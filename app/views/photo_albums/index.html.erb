@@ -1,17 +1,1 @@
-<div class="container d-flex flex-column align-items-center justify-center pt-5">
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <h1 class="reminder-title"><strong>Seus Albums:</strong></h1>
-        <li class="nav-item">
-            <a class="nav-link" id="photo-tab" data-toggle="tab" href="#photo-album" role="tab" aria-controls="medicine" aria-selected="true">Crie Novo Album</a>
-        </li>
-
-        <div class="tab-content w-100" id="myTabContent">
-            <div class="tab-pane fade" id="photo-album" role="tabpanel" aria-labelledby="photo-album-tab">
-                <!-- Index for photo-albums -->  
-                <%= render 'shared/new_helper' %>
-                
-            </div>
-        </div>
-    </ul>
-
-</div>
+ <%= link_to 'criar album', new_photo_album_path %>
