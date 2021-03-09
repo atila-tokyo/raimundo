@@ -1,19 +1,19 @@
 class PhotoAlbumsController < ApplicationController
 
     def index
-        @photo_albums = policy_scope(PhotoAlbums).order(created_at: :desc)
+        @photoalbums = policy_scope(PhotoAlbum).order(created_at: :desc)
     end
 
     def new
-        photo_album = PhotoAlbums.new
-        authorize @photo_albums
+        @photoalbum = PhotoAlbums.new
+        authorize @photoalbums
     end
 
     def create 
-        @photo_album = PhotoAlbums.new(photo_album_params)
-        @authorize @photo_album
+        @photoalbum = PhotoAlbums.new(photo_album_params)
+        authorize @photoalbum
 
-        if @photo_album.save
+        if @photoalbum.save
             redirect_to photo_albums_path
         else
             render :new
@@ -22,6 +22,13 @@ class PhotoAlbumsController < ApplicationController
 
     def update 
         @photo_album.update(photo_album_params)
+
+        redirect_to photo_albums_path
+    end
+
+    def destroy 
+        @photo_album.destroy
+        redirect_to photo_albums_path
     end
 
     private
