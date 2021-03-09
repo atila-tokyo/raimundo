@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'guests/destroy'
   devise_for :users
   root to: 'pages#home'
   resources :reminders
