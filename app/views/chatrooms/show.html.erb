@@ -2,7 +2,7 @@
   <div class="list-group w-200px bg-white br-light">
     <% @result.each do |chatroom| %>
       <%= link_to "#{chatroom.name}", chatroom_path(chatroom), 
-                class: "list-group-item #{'active' if chatroom == @chatroom}" 
+                class: "list-group-item #{'active' if chatroom == @chatroom} chats-list" 
             %>
     <% end %>
   </div>

@@ -85,6 +85,36 @@ box-shadow: 0 0 15px rgba(0,0,0,0.2)
   color: #666;
 }
 
+.msger-header-title {
+  font-family: "Montserrat" sans-serif;
+  font-weight: bold;
+  margin: 0 0 5px 5px;
+  color: #e99949;
+}
+
+.fas.fa-comment-alt {
+  color: #666666;
+}
+
+.chats-list {
+  text-decoration: none !important;
+  color: #666666;
+  &:hover {
+    color: #e7a848;
+  }
+}
+
+.chats-list.active {
+  background: linear-gradient(
+90deg
+, #f3b16e 0%, #e7a848 95.31%) !important;
+    color: #f1f1f1 !important;
+    text-align: center !important;
+    font-weight: 600 !important;
+    border-color: #FF9C33 !important;
+    box-shadow: 0px 2px 1px 1px #888888 !important;
+}
+
 .msger-chat {
   flex: 1;
   overflow-y: auto;
