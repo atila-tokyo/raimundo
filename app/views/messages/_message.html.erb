@@ -1,4 +1,14 @@
 <div class="message-container" id="message-<%= message.id %>">
+  <% x = 0 %>
+  <% if x.even?  %>
+    <%= render 'messages/message_left', message: message %>
+    <% x += 1 %>
+  <% else %>
+    <% render 'messages/message_right', message: message %>
+  <% end %>
+</div>
+<!--
+<div class="message-container" id="message-<%= message.id %>">
     <% if current_user.photo.attached? %>
         <%= cl_image_tag message.user.profile_picture,
             width: 56, height: 56, crop: :thumb, gravity: :face,
@@ -14,3 +24,4 @@
     </i>
     <p><%= message.content %></p>
 </div>
+-->

@@ -1,6 +1,5 @@
 <div class="d-flex">
   <div class="list-group w-200px bg-white br-light">
-   
     <% @result.each do |chatroom| %>
       <%= link_to "#{chatroom.name}", chatroom_path(chatroom), 
                 class: "list-group-item #{'active' if chatroom == @chatroom}" 
@@ -17,25 +16,33 @@
           <span><i class="fas fa-cog"></i></span>
         </div>
       </header>
-    
-    <div>
-      <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-        <% @messages.each do |message| %>
-          <%= render 'messages/message', message: message %>
+      <main class="msger-chat">
+        <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+          <% @messages.each do |message| %>
+            <%= render 'messages/message', message: message %>
+          <% end %>
+        </div>
+      </main>
+        <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+          <%= f.input :content, label: false, placeholder: "Message: #{@chatroom.name}" %>
         <% end %>
-      </div>
-      <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-        <%= f.input :content, label: false, placeholder: "Message: #{@chatroom.name}" %>
-      <% end %>
+      
     </div>
-  </div>
   </section>
 </div>
-
 <%# Chat do codepen %>
+<%# 
+<section class="msger">
+  <header class="msger-header">
+    <div class="msger-header-title">
+      <i class="fas fa-comment-alt"></i> SimpleChat
+    </div>
+    <div class="msger-header-options">
+      <span><i class="fas fa-cog"></i></span>
+    </div>
+  </header>
 
-
-  <%# <main class="msger-chat">
+  <main class="msger-chat">
     <div class="msg left-msg">
       <div
        class="msg-img"
@@ -77,4 +84,4 @@
     <input type="text" class="msger-input" placeholder="Enter your message...">
     <button type="submit" class="msger-send-btn">Send</button>
   </form>
-</section> %> 
+</section> %>
