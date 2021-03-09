@@ -3,6 +3,22 @@
   background: radial-gradient(51.28% 51.28% at 48.72% 57.34%, #5FD6F1 0%, #1D95B4 100%);
 }
 
+// Table "Your chats" card
+.table.table-dark.links-style {
+  border-radius: 25px;
+}
+
+//No chats created icon
+.no_chats {
+width: 30em;
+height: 20em;
+background: linear-gradient(90deg, #e99949 0%, #e7a848 95.31%);
+border-radius: 55%;
+justify-content: center;
+box-shadow: 0 0 15px rgba(0,0,0,0.2)
+}
+
+
 .chatroom {
   background: white;
   height: calc(100vh - 66px);
