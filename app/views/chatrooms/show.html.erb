@@ -13,7 +13,16 @@
           <i class="fas fa-comment-alt"></i> <%= @chatroom.name %>
         </div>
         <div class="msger-header-options">
-          <span><i class="fas fa-cog"></i></span>
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Opções
+            </button>
+            <div class="dropdown-menu dropdown-menu-right dropdown-chat-options">
+              <%= link_to "Adicionar Pessoas", edit_chatroom_path(@chatroom), class: "dropdown-item" %> 
+              <button class="dropdown-item" type="button">Remover pessoas</button>
+              <%= link_to "Apagar Conversa", chatroom_path(@chatroom), method: :delete, class: "dropdown-item", data: { confirm: "Apagar Conversa?" } %>
+            </div>
+          </div>
         </div>
       </header>
       <main class="msger-chat">
@@ -23,15 +32,14 @@
           <% end %>
         </div>
       </main>
-        <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-          <div class="d-flex flex-row">
-            <div class="w-100">
-              <%= f.input :content, label: false, placeholder: "Mensagem para: #{@chatroom.name}" %>
-            </div>
-              <%= f.submit "Enviar", class: "send-msg-btn btn btn-success" %>
+      <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+        <div class="d-flex flex-row">
+          <div class="w-100">
+            <%= f.input :content, label: false, placeholder: "Mensagem para: #{@chatroom.name}" %>
           </div>
-        <% end %>
-      
+          <%= f.submit "Enviar", class: "send-msg-btn btn btn-success" %>
+        </div>
+      <% end %>
     </div>
   </section>
 </div>
