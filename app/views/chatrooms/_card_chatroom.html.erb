@@ -8,16 +8,18 @@
       <td>
         <%= chatroom.users.map(&:username).join(", ") %>
       </td>
-      <td>
-        <%= link_to edit_chatroom_path(chatroom), class: "" do %>
-          <i class="fas fa-edit"></i>
-        <% end %>
-      </td>
-      <td>
-        <%= link_to chatroom_path(chatroom), method: :delete, data: { confirm: "Apagar Conversa?" } do %>
-          <i class="fas fa-trash"></i>
-        <% end %>
-      </td>
+      <% if chatroom.user == current_user %>
+        <td>
+          <%= link_to edit_chatroom_path(chatroom), class: "" do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to chatroom_path(chatroom), method: :delete, data: { confirm: "Apagar Conversa?" } do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        </td>
+      <% end %>
     </tr>
   </tbody>
 

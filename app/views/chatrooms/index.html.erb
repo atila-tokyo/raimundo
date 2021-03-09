@@ -20,8 +20,10 @@
                 <tr>
                   <th scope="col">Nome da conversa</th>
                   <th scope="col">Seus amigos no grupo</th>
-                  <th scope="col">Editar</th>
-                  <th scope="col">Deletar</th>
+                  <% if @result.include?(current_user.chatrooms) %>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Deletar</th>
+                  <% end %>
                 </tr>
               </thead>
               <% @result.each do |chatroom| %>
