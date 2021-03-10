@@ -1,0 +1,20 @@
+  <tbody>
+    <tr>
+      <th scope="row">
+        <%= link_to photoalbum.title,  photo_album_path(photoalbum) %>
+      </th>
+      <% if photoalbum.user == current_user %>
+        <td>
+          <%= link_to edit_photo_album_path(photoalbum), class: "" do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to photo_albums_path(photoalbum), method: :delete, data: { confirm: "Apagar Conversa?" } do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+  </tbody>
+
