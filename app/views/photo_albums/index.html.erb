@@ -12,31 +12,32 @@
         <% end %>
       </div>
       <div class="col-6 w-100">
-        <% if @result.present? %>
+        <% if @photoalbums.present? %>
           <div class ="form-card">                               
           <h1 class="your-chats reminder-title text-center">Seus Albums</h1>
-          <% if policy(photoalbum) %>
+          <% if policy(PhotoAlbum) %>
             <table class="table table-dark links-style text-center">
               <thead>
                 <tr>
                   <th scope="col">Nome do album</th>
-                  <th scope="col">Seus amigos no grupo</th>
-                  <% unless current_user.photoalbum.empty? %>
+                  <% unless current_user.photo_albums.empty? %>
                     <th scope="col">Editar</th>
                     <th scope="col">Deletar</th>
                   <% end %>
                 </tr>
               </thead>
-              <% @result.each do |chatroom| %>
-                  <%= render "card_chatroom", chatroom: chatroom %>
-                <% end %>
+                    <% @photoalbums.each do |photo| %>
+                        <%= render "card_photo_album", photoalbum: photo %>
+                    <% end %>
               </table>
             <% end %>
           <% else %>
             <div class ="form-card ">
-              <h2 class="your-chats reminder-title text-center">Putz! Você ainda não tem nenhum album! </h2>
-              <%= image_tag "undraw_Group_chat3.png", class: "no_chats d-flex align-items-center"%>
-              <h2 class="your-chats reminder-title text-center mt-5">Você pode criar albums clicando no botão à esquerda</h2>
+               <div class="card-photo">
+                    <h2 class="your-chats reminder-title text-center">Putz! Você ainda não tem nenhum album! </h2>
+                    <%= image_tag "image_viewer_wxce.svg", class: "no_album d-flex align-items-center"%>
+                    <h2 class="your-chats reminder-title text-center mt-5">Você pode criar albums clicando no botão à esquerda</h2>
+                </div>
             </div>
           <% end %>
         </div>
@@ -44,3 +45,4 @@
     </div>
   </div>
 <% end %>
+  
