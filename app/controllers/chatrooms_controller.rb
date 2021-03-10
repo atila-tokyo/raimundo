@@ -18,17 +18,7 @@ class ChatroomsController < ApplicationController
     authorize @chatroom
 
     if @chatroom.save
-      if params[:chatroom][:users].present?
-        users = User.find(params[:chatroom][:users])
-
-        users.each do |user|
-          Guest.create(
-            user: user,
-            chatroom: @chatroom
-          )
-        end
-      end
-
+      create_guests_helper(params)
       redirect_to chatrooms_path
       flash[:notice] = "Conversa #{@chatroom.name} criada com sucesso!"
     else
@@ -40,7 +30,7 @@ class ChatroomsController < ApplicationController
   end
 
   def update
-    @chatroom.update(chatroom_params)
+    create_guests_helper(params) if @chatroom.update(chatroom_params)
 
     redirect_to chatrooms_path
   end
@@ -74,5 +64,18 @@ class ChatroomsController < ApplicationController
     @result << chatrooms
     @result << member
     @result.flatten!.uniq!
+  end
+
+  def create_guests_helper(params)
+    return unless params[:chatroom][:users].present?
+
+    users = User.find(params[:chatroom][:users])
+
+    users.each do |user|
+      Guest.create(
+        user: user,
+        chatroom: @chatroom
+      )
+    end
   end
 end
