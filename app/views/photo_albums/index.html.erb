@@ -1,8 +1,46 @@
-<%= link_to 'criar album', new_photo_album_path, class: 'btn btn-primary' %>
-<% if current_user.photo_albums.present? %>
-    <ul>
-        <% @photoalbums.each do |photo_album| %>
-            <li> <%= link_to photo_album.title, photo_album_path(photo_album)  %> </li>
+<% if user_signed_in? %>
+  <div class="container mt-5">
+    <div class="row w-100">
+      <div class="col-6 w-100">
+        <%= link_to new_photo_album_path, class: "card-link home-cards" do %>
+          <div class="card-logged w-75">
+            <i class="card-icon fas fa-images"></i>
+            <h1 class="article-title">
+              Crie um album
+            </h1>
+          </div>
         <% end %>
-    </ul>
+      </div>
+      <div class="col-6 w-100">
+        <% if @result.present? %>
+          <div class ="form-card">                               
+          <h1 class="your-chats reminder-title text-center">Seus Albums</h1>
+          <% if policy(photoalbum) %>
+            <table class="table table-dark links-style text-center">
+              <thead>
+                <tr>
+                  <th scope="col">Nome do album</th>
+                  <th scope="col">Seus amigos no grupo</th>
+                  <% unless current_user.photoalbum.empty? %>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Deletar</th>
+                  <% end %>
+                </tr>
+              </thead>
+              <% @result.each do |chatroom| %>
+                  <%= render "card_chatroom", chatroom: chatroom %>
+                <% end %>
+              </table>
+            <% end %>
+          <% else %>
+            <div class ="form-card ">
+              <h2 class="your-chats reminder-title text-center">Putz! Você ainda não tem nenhum album! </h2>
+              <%= image_tag "undraw_Group_chat3.png", class: "no_chats d-flex align-items-center"%>
+              <h2 class="your-chats reminder-title text-center mt-5">Você pode criar albums clicando no botão à esquerda</h2>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
