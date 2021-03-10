@@ -6,7 +6,7 @@
           <div class="card-logged w-75">
             <i class="card-icon fas fa-images"></i>
             <h1 class="article-title">
-              Crie um album
+              Crie um álbum
             </h1>
           </div>
         <% end %>
@@ -14,12 +14,12 @@
       <div class="col-6 w-100">
         <% if @photoalbums.present? %>
           <div class ="form-card">                               
-          <h1 class="your-chats reminder-title text-center">Seus Albums</h1>
+          <h1 class="your-chats reminder-title text-center">Seus Álbums</h1>
           <% if policy(PhotoAlbum) %>
             <table class="table table-dark links-style text-center">
               <thead>
                 <tr>
-                  <th scope="col">Nome do album</th>
+                  <th scope="col">Nome do álbum</th>
                   <% unless current_user.photo_albums.empty? %>
                     <th scope="col">Editar</th>
                     <th scope="col">Deletar</th>
@@ -34,9 +34,9 @@
           <% else %>
             <div class ="form-card ">
                <div class="card-photo">
-                    <h2 class="your-chats reminder-title text-center">Putz! Você ainda não tem nenhum album! </h2>
+                    <h2 class="your-chats reminder-title text-center">Ops! Você ainda não tem nenhum álbum! </h2>
                     <%= image_tag "image_viewer_wxce.svg", class: "no_album d-flex align-items-center"%>
-                    <h2 class="your-chats reminder-title text-center mt-5">Você pode criar albums clicando no botão à esquerda</h2>
+                    <h2 class="your-chats reminder-title text-center mt-5">Você pode criar álbums clicando no botão à esquerda</h2>
                 </div>
             </div>
           <% end %>
