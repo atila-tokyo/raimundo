@@ -6,9 +6,15 @@ class GuestsController < ApplicationController
 
   def destroy
     # guest = Guest.where("user_id = ? AND chatroom_id = ?", params[:id], params[:format]).first
-    guest = Guest.find_by(user: User.find(params[:id]), chatroom: Chatroom.find(params[:format]))
+    user = User.find(params[:id])
+    if params[:format].present?
+      guest = Guest.find_by(user: user, chatroom: Chatroom.find(params[:format]))
+      redirect_to chatroom_guests_path(params[:format])
+    else
+      guest = Guest.find_by(user: user)
+      redirect_to chatrooms_path
+    end
     authorize guest
     guest.destroy
-    redirect_to chatroom_guests_path(params[:format])
   end
 end
