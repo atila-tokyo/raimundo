@@ -21,6 +21,12 @@
             <i class="fas fa-trash"></i>
           <% end %>
         </td>
+      <% else %>
+        <td>
+          <%= link_to guest_path(current_user), method: :delete, data: { confirm: "Apagar Conversa?" } do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        </td>
       <% end %>
     </tr>
   </tbody>

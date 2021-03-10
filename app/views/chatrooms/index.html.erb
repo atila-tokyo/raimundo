@@ -24,6 +24,8 @@
                   <% unless current_user.chatrooms.empty? %>
                     <th scope="col">Editar</th>
                     <th scope="col">Deletar</th>
+                  <% else %>
+                    <th scope="col">Sair</th>
                   <% end %>
                 </tr>
               </thead>
