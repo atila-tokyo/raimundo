@@ -40,7 +40,16 @@ class ChatroomsController < ApplicationController
   end
 
   def update
-    @chatroom.update(chatroom_params)
+    if @chatroom.update(chatroom_params) && params[:chatroom][:users].present?
+      users = User.find(params[:chatroom][:users])
+
+      users.each do |user|
+        Guest.create(
+          user: user,
+          chatroom: @chatroom
+        )
+      end
+    end
 
     redirect_to chatrooms_path
   end
