@@ -2,29 +2,8 @@
   <div class="container d-flex flex-column align-items-center justify-center pt-5 mt-5">
     <div class="col-6 w-100">
       <div class ="form-card">
-        <h1 class="your-chats reminder-title text-center">Remover participante</h1>
-        <table class="table table-dark links-style text-center">
-          <thead>
-            <tr>
-              <th scope="col">Participantes do grupo</th>
-              <th scope="col">Remover</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @chatroom.users.each do |guest| %>
-              <div class="d-flex-inline">
-                <tr>
-                  <th scope="row"><%= guest.username %></th>
-                  <td>
-                    <%= link_to guest_path(guest, @chatroom.id), method: :delete, data: { confirm: "Remover amigo?" } do %>
-                      <i class="fas fa-trash"></i>
-                    <% end %>
-                  </td>
-                </tr>
-              </div>  
-            <% end %>
-          </tbody>  
-        </table>  
+        <%= render 'form', chatroom: @chatroom, button_name: "Remover participantes" %>
+       
       </div>
     </div>
   </div>    
