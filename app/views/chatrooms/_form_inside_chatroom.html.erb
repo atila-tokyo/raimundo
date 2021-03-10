@@ -1,9 +1,0 @@
-<%= simple_form_for chatroom do |f| %>
-    <%= f.input :users, label: "Escolha seus amigos para conversar", collection: (User.where.not(id: current_user.id) - chatroom.users).map { |user| [user.username, user.id] },
-        input_html: { multiple: true, class: "select2" }, include_hidden: false, label_html: { class: "usernames-chat" } %> 
-    
-    <div class="d-flex justify-content-between">
-      <%= link_to "Voltar ao Perfil",  root_path, class: 'btn-back btn btn-primary mt-2 mb-5'  %>
-      <%= f.submit value: button_name, class: 'btn-create btn btn-success mt-2 mb-5 ml-5 w-50 on-change-edit' %>
-    </div>
-<% end %>
