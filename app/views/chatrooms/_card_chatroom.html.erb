@@ -4,7 +4,11 @@
         <%= link_to chatroom.name, chatroom_path(chatroom) %>
       </th>
       <td>
-        <%= chatroom.users.map(&:username).join(", ") %>
+        <% if current_user == chatroom.user %>
+          <%= chatroom.users.map(&:username).join(", ") %>
+        <% else %>
+          <%= (chatroom.users - [current_user] + [chatroom.user]).map(&:username).join(", ") %>
+        <% end %>
       </td>
       <% if chatroom.user == current_user %>
         <td>
