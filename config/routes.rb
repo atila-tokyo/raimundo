@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :messages, only: %i[create]
     resources :guests, only: %i[index update]
   end
+  resources :photo_albums 
 end

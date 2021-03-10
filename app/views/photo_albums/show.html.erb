@@ -1,0 +1,6 @@
+<%= @photoalbum.title %>
+<% @photoalbum.photos.each do |photo|%>
+    <%= cl_image_tag photo.key,
+            width: 300, height: 300, crop: :fill
+     %>
+<% end %>
