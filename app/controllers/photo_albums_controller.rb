@@ -1,5 +1,5 @@
 class PhotoAlbumsController < ApplicationController
-    before_action :set_photo_album, only: %i[ show ]
+    before_action :set_photo_album, only: %i[ show destroy ]
     def index
         @photoalbums = policy_scope(PhotoAlbum).order(created_at: :desc)
     end
@@ -33,7 +33,7 @@ class PhotoAlbumsController < ApplicationController
     end
  
     def destroy 
-        @photo_album.destroy
+        @photoalbum.destroy
         redirect_to photo_albums_path
     end
  
