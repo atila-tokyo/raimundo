@@ -20,7 +20,7 @@
               </button>
             <% end %>
             <div class="dropdown-menu dropdown-menu-right dropdown-chat-options">
-              <%= link_to "Adicionar Pessoas", edit_chatroom_path(@chatroom), class: "dropdown-item" %>
+              <%= link_to "Adicionar Pessoas", edit_chatroom_path(@chatroom, show_name: false), class: "dropdown-item" %>
               <%= link_to "Remover Pessoas", chatroom_guests_path(@chatroom), class: "dropdown-item" %>
               <%= link_to "Apagar Conversa", chatroom_path(@chatroom), method: :delete, class: "dropdown-item", data: { confirm: "Apagar Conversa?" } %>
             </div>
