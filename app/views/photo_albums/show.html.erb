@@ -1,14 +1,46 @@
-<div class="gallery">
-    <div class="gallery">
-        <% @photoalbum.photos.each do |photo|%>
-            <%= cl_image_tag photo.key,
-                    width: 300, height: 300, crop: :fill
-            %>
-        <% end %>
+
+<div class="lightbox-gallery">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">Lightbox Gallery</h2>
+            <p class="text-center">Find the lightbox gallery for your project. click on any image to open gallary</p>
+        </div>
+        <div class="row photos">
+              <% @photoalbum.photos.each do |photo|%>
+                    <div class="col-sm-6 col-md-4 col-lg-3 item">
+                        <%= link_to(photo) do %>
+                        <%=  cl_image_tag photo.key, 
+                            class: 'img-responsive img-fluid',
+                            width: 300, height: 300, crop: :fill %>
+                           
+                        
+                        <% end %>    
+                     </div>     
+                <% end %>
+        </div>
     </div>
-    <div class="desc"> <%= @photoalbum.title %></div>
-
 </div>
+ 
 
-
-
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
