@@ -3,6 +3,7 @@
   background: linear-gradient(90deg, #2BC0E4 0%, #6A75D5 100%);
   list-style-type: none;
   padding-left: 0;
+  border-bottom: 1px solid #f1f1f1 !important;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -24,6 +25,7 @@
 
 .navbar-nav .nav-link {
   padding-top: .8em;
+  font-weight: bold;
   &:hover {
     border-bottom: 2px solid #FFFFFF;
   }
@@ -56,7 +58,7 @@
   padding-left: .2em;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  color: #222222;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .navbar-toggler {
@@ -106,4 +108,9 @@
     pointer-events: none;
 }
 
-
+// Add reminder navbar text
+.add-remidner-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7em;
+  font-weight: bold;
+}

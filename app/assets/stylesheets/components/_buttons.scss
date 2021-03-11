@@ -93,3 +93,27 @@
     color: #FFFFFF;
   }
 }
+
+// Edit album button
+
+.edit-album {
+  background-color: #e99e2dfe;
+  border-color: #e99e2dfe;
+  width: 15em !important;
+  &:hover {
+    background-color: #e78607fe;
+    border-color: #e78607fe;
+}
+}
+
+// Back to albums button on show
+.btn-back-albums {
+  background-color: #1D5063;
+  border-color: #1D5063;
+  padding: 0.5em;
+  width: 15em;
+  &:hover {
+  background-color: #143642;
+  border-color: #143642;
+  }
+}
