@@ -145,8 +145,6 @@ box-shadow: 0 0 15px rgba(0,0,0,0.2)
   margin: 0;
 }
 .msg-img {
-  width: 50px;
-  height: 50px;
   margin-right: 10px;
   background: #ddd;
   background-repeat: no-repeat;
@@ -235,3 +233,8 @@ box-shadow: 0 0 15px rgba(0,0,0,0.2)
 .dropdown-chat-options {
   background-color: #f1f1f1;
 }
+
+// Message content 
+// .msg-text {
+//   font-weight: 500 !important;
+// }
