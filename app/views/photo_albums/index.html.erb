@@ -13,31 +13,31 @@
       </div>
       <div class="col-6 w-100">
         <% if @photoalbums.present? %>
-          <div class ="form-card">                               
-          <h1 class="your-chats reminder-title text-center">Seus álbuns</h1>
-          <% if policy(PhotoAlbum) %>
-            <table class="table table-dark links-style text-center">
-              <thead>
-                <tr>
-                  <th scope="col">Nome do álbum</th>
-                  <% unless current_user.photo_albums.empty? %>
-                    <th scope="col">Editar</th>
-                    <th scope="col">Deletar</th>
-                  <% end %>
-                </tr>
-              </thead>
-                    <% @photoalbums.each do |photo| %>
-                        <%= render "card_photo_album", photoalbum: photo %>
+          <div class ="form-card">
+            <h1 class="your-chats reminder-title text-center">Seus álbuns</h1>
+            <% if policy(PhotoAlbum) %>
+              <table class="table table-dark links-style text-center">
+                <thead>
+                  <tr>
+                    <th scope="col">Nome do álbum</th>
+                    <% unless current_user.photo_albums.empty? %>
+                      <th scope="col">Editar</th>
+                      <th scope="col">Deletar</th>
                     <% end %>
+                  </tr>
+                </thead>
+                <% @photoalbums.each do |photo| %>
+                  <%= render "card_photo_album", photoalbum: photo %>
+                <% end %>
               </table>
             <% end %>
           <% else %>
             <div class ="form-card ">
-               <div class="card-photo">
-                    <h2 class="your-chats reminder-title text-center">Ops! Você ainda não tem nenhum álbum! </h2>
-                    <%= image_tag "image_viewer_wxce.svg", class: "no_album d-flex align-items-center"%>
-                    <h2 class="your-chats reminder-title text-center mt-5">Você pode criar álbums clicando no botão à esquerda</h2>
-                </div>
+              <div class="card-photo">
+                <h2 class="your-chats reminder-title text-center">Ops! Você ainda não tem nenhum álbum! </h2>
+                <%= image_tag "image_viewer_wxce.svg", class: "no_album d-flex align-items-center"%>
+                <h2 class="your-chats reminder-title text-center mt-5">Você pode criar álbums clicando no botão à esquerda</h2>
+              </div>
             </div>
           <% end %>
         </div>
@@ -45,4 +45,3 @@
     </div>
   </div>
 <% end %>
-  

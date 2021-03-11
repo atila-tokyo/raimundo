@@ -3,9 +3,12 @@
     <div class="intro">
       <div class="d-flex justify-content-center align-items-center flex-column photo-header-link w-100">
         <h2 class="reminder-title text-center"> <%= @photoalbum.title %></h2>
-        <%= link_to edit_photo_album_path(@photoalbum), class: "" do %>
-          Editar seu Album <i class="fas fa-edit"></i>
-        <% end %>
+        <div class="d-inline-flex align-items-center justify-content-center">
+          <%= link_to edit_photo_album_path(@photoalbum), class: "" do %>
+            Editar seu Album <i class="fas fa-edit"></i>
+          <% end %>
+          <%= link_to "Voltar aos álbuns",  photo_albums_path, class: 'btn-back btn btn-primary mt-2 mb-5 ml-5'  %>
+        </div>
       </div>
     </div>
     <div class="form-card-album photo-gallery w-100 ">
@@ -17,17 +20,17 @@
                                     class: 'img-responsive img-fluid item ',
                                     width: 300, height: 300, crop: :fill
                                 %>
-            <% end %> 
+            <% end %>
           </div>
-           <%= link_to delete_image_attachment_photo_album_path(@photoalbum, photo), 
+          <%= link_to delete_image_attachment_photo_album_path(@photoalbum, photo), 
               method: :delete, 
               class: "photo-header-link",
               data: { confirm: 'Tem certeza?' } do 
             %>
-                <i class="fas fa-times"></i>
-            <% end %>
+          <i class="fas fa-times"></i>
         <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
+</div>
 </div>
