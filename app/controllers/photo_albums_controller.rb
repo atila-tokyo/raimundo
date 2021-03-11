@@ -27,7 +27,7 @@ class PhotoAlbumsController < ApplicationController
   def update
     @photoalbum.update(photo_album_params)
 
-    redirect_to photo_albums_path
+    redirect_to photo_album_path(@photoalbum)
   end
 
   def show
