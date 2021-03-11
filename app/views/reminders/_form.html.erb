@@ -5,8 +5,11 @@
             
     <%= f.input :content, label: "Detalhes", as: :text, placeholder: "Se quiser, escreva alguns detalhes do seu lembrete", input_html: { rows: 5 } %>
 
-    <div id= "search-data" class="form-search search-data py-3" data-medicines="<%= Medicine.pluck(:name).sort.to_json %>">
-        <%= text_field_tag :search_choice, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Procure seu remédio..." %>
+    <div id= "search-data" class="form-search search-data w-100 py-3" data-medicines="<%= Medicine.pluck(:name).sort.to_json %>">
+        <label for="search_choice" class="medicine-label w-100">
+          Remédios
+          <%= text_field_tag :search_choice, nil, autocomplete: :off, class: "form-control search-input w-100", label: "Remédios", placeholder: "Procure seu remédio..."%>
+        </label>
     </div>
 
     <div class="d-flex justify-content-around py-3">

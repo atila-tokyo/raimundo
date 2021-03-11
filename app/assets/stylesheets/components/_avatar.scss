@@ -1,5 +1,6 @@
 @mixin base_avatar($size, $radius: 50%) {
   width: $size;
+  height: $size;
   border-radius: $radius;
 }
 

@@ -2,7 +2,7 @@
   <%= f.input :title , :label => 'Nome do álbum' %>
   <%= f.input :photos,  as: :file,  input_html: { multiple: true },  label: "Selectionar Fotos" %>
   <div class="d-flex justify-content-between">
-    <%= link_to "Voltar aos Álbums",  photo_albums_path, class: 'btn-back btn btn-primary mt-2 mb-5'  %>
+    <%= link_to "Voltar aos Álbuns",  photo_albums_path, class: 'btn-back btn btn-primary mt-2 mb-5'  %>
     <%= f.submit value: button_name, class: 'btn-create btn btn-success mt-2 mb-5 ml-5 w-50 on-change-edit' %>
   </div>
 <% end %>
