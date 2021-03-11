@@ -28,3 +28,16 @@
   margin-bottom: 1em;
 }
 
+// Card current password to confirm
+.form-group.password.required.user_current_password  {
+  background-color: rgb(29, 80, 99);;
+  border-radius: 25px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 1.5em;
+}
+
+
+.current-password {
+  color: #fea501 !important;
+  font-weight: 600;
+}
