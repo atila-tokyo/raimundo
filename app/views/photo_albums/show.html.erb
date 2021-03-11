@@ -19,7 +19,7 @@
                                 %>
             <% end %> 
           </div>
-           <%= link_to photo_album_path(photo), 
+           <%= link_to delete_image_attachment_photo_album_path(@photoalbum, photo), 
               method: :delete, 
               class: "photo-header-link",
               data: { confirm: 'Tem certeza?' } do 

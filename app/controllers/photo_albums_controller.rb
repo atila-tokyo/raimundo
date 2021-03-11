@@ -1,5 +1,5 @@
 class PhotoAlbumsController < ApplicationController
-  before_action :set_photo_album, only: %i[show edit update destroy]
+  before_action :set_photo_album, only: %i[show edit update destroy delete_image_attachment]
   def index
     @photoalbums = policy_scope(PhotoAlbum).order(created_at: :desc)
   end
@@ -38,6 +38,13 @@ class PhotoAlbumsController < ApplicationController
   def destroy
     @photoalbum.destroy
     redirect_to photo_albums_path
+  end
+
+  def delete_image_attachment
+    @image = ActiveStorage::Attachment.find(params[:format])
+
+    @image.purge
+    redirect_to photo_album_path(@photoalbum)
   end
 
   private
