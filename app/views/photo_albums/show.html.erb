@@ -1,8 +1,14 @@
-<div class="container">
-    <%= @photoalbum.title %>
-    <% @photoalbum.photos.each do |photo|%>
-        <%= cl_image_tag photo.key,
-                width: 300, height: 300, crop: :fill
-        %>
-    <% end %>
+<div class="gallery">
+    <div class="gallery">
+        <% @photoalbum.photos.each do |photo|%>
+            <%= cl_image_tag photo.key,
+                    width: 300, height: 300, crop: :fill
+            %>
+        <% end %>
+    </div>
+    <div class="desc"> <%= @photoalbum.title %></div>
+
 </div>
+
+
+
