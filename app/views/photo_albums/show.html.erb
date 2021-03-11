@@ -4,10 +4,11 @@
       <div class="d-flex justify-content-center align-items-center flex-column photo-header-link w-100">
         <h2 class="reminder-title text-center"> <%= @photoalbum.title %></h2>
         <div class="d-inline-flex align-items-center justify-content-center">
+          <%= link_to "Voltar aos álbuns",  photo_albums_path, class: 'btn-back btn btn-primary mt-2 mb-5 mr-5'  %>
           <%= link_to edit_photo_album_path(@photoalbum), class: "" do %>
             Editar seu Album <i class="fas fa-edit"></i>
           <% end %>
-          <%= link_to "Voltar aos álbuns",  photo_albums_path, class: 'btn-back btn btn-primary mt-2 mb-5 ml-5'  %>
+          
         </div>
       </div>
     </div>
