@@ -17,8 +17,15 @@
                                     class: 'img-responsive img-fluid item ',
                                     width: 300, height: 300, crop: :fill
                                 %>
-            <% end %>
+            <% end %> 
           </div>
+           <%= link_to photo_album_path(photo), 
+              method: :delete, 
+              class: "photo-header-link",
+              data: { confirm: 'Tem certeza?' } do 
+            %>
+                <i class="fas fa-times"></i>
+            <% end %>
         <% end %>
       </div>
     </div>

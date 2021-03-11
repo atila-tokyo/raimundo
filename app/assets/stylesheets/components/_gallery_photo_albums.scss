@@ -62,3 +62,12 @@
         color: whitesmoke;
     }
 }
+
+.photo-header-link i {
+    text-decoration: none;
+    color: white;
+    &:hover {
+        color: whitesmoke;
+        transform: scale(1.3);
+    }
+}
