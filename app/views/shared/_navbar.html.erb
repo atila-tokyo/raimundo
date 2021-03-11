@@ -51,9 +51,12 @@
            <li class="nav-item">
             <%= link_to "Álbums", photo_albums_path, class: "nav-link" %>
           </li>
+          <li class="nav-item">
+            <%= link_to "Rotina", reminders_path, class: "nav-link" %>
+          </li>
           <li class="nav-item icon">
             <%= link_to new_reminder_path, class: "nav-link-icon" do %>
-              <i class="far fa-plus-square fa-2x"></i>
+              <i class="far fa-plus-square fa-2x"> Criar Lembrete</i>
             <% end %>
           </li>
         <% else %>
