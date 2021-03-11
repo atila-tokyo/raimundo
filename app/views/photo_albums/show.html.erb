@@ -1,15 +1,15 @@
 <div class="lightbox-gallery">
   <div class="container">
     <div class="intro">
-      <div class="d-flex justify-content-center align-items-center flex-column photo-header-link">
+      <div class="d-flex justify-content-center align-items-center flex-column photo-header-link w-100">
         <h2 class="reminder-title text-center"> <%= @photoalbum.title %></h2>
         <%= link_to edit_photo_album_path(@photoalbum), class: "" do %>
           Editar seu Album <i class="fas fa-edit"></i>
         <% end %>
       </div>
     </div>
-    <div class="form-card photo-gallery">
-      <div class="row photos">
+    <div class="form-card-album photo-gallery w-100 ">
+      <div class="row photos d-flex justify-content-center w-100">
         <% @photoalbum.photos.each do |photo|%>
           <div class="col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center align-items-center">
             <%= link_to(photo) do %>
