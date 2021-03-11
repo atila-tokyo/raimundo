@@ -1,47 +1,33 @@
-
 <div class="lightbox-gallery">
-    <div class="container">
-        <div class="intro">
-            <h2 class="reminder-title text-center"> <%= @photoalbum.title %></h2>
-           
-        </div>
-        <div class="form-card photo-gallery">
-            <div class="row photos">
-                <% @photoalbum.photos.each do |photo|%>
-                        <div class="col-sm-6 col-md-4 col-lg-3 item">
-                            <%= link_to(photo) do %>
-                                <%=  cl_image_tag photo.key, 
-                                    class: 'img-responsive img-fluid',
+  <div class="container">
+    <div class="intro">
+      <div class="d-flex justify-content-center align-items-center flex-column photo-header-link w-100">
+        <h2 class="reminder-title text-center"> <%= @photoalbum.title %></h2>
+        <%= link_to edit_photo_album_path(@photoalbum), class: "" do %>
+          Editar seu Album <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+    </div>
+    <div class="form-card-album photo-gallery w-100 ">
+      <div class="row photos d-flex justify-content-center w-100">
+        <% @photoalbum.photos.each do |photo|%>
+          <div class="col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center align-items-center">
+            <%= link_to(photo) do %>
+              <%=  cl_image_tag photo.key, 
+                                    class: 'img-responsive img-fluid item ',
                                     width: 300, height: 300, crop: :fill
                                 %>
-                            <% end %>    
-                        </div>     
-                    <% end %>
-            </div>
-        </div>
+            <% end %> 
+          </div>
+           <%= link_to delete_image_attachment_photo_album_path(@photoalbum, photo), 
+              method: :delete, 
+              class: "photo-header-link",
+              data: { confirm: 'Tem certeza?' } do 
+            %>
+                <i class="fas fa-times"></i>
+            <% end %>
+        <% end %>
+      </div>
     </div>
+  </div>
 </div>
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 

@@ -30,6 +30,10 @@ class PhotoAlbumPolicy < ApplicationPolicy
     owner?
   end
 
+  def delete_image_attachment?
+    owner?
+  end
+
   private
 
   def owner?

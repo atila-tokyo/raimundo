@@ -1,62 +1,78 @@
 // color title edit and new
 .file {
-    color: white;
+	color: white;
 }
-.form-control-file{
-   color: white !important; 
+.form-control-file {
+	color: white !important;
 }
-
 
 // show photo albums
 .lightbox-gallery {
-  background: radial-gradient(51.28% 51.28% at 48.72% 57.34%, #5FD6F1 0%, #1D95B4 100%);
-    background-repeat: no-repeat;
-    color: #000;
-    overflow-x: hidden
+	background: radial-gradient(
+		51.28% 51.28% at 48.72% 57.34%,
+		#5fd6f1 0%,
+		#1d95b4 100%
+	);
+	background-repeat: no-repeat;
+	color: #000;
+	overflow-x: hidden;
 }
 
 .lightbox-gallery p {
-    color: #fff
+	color: #fff;
 }
 
 .lightbox-gallery h2 {
-    font-weight: bold;
-    margin-bottom: 40px;
-    padding-top: 40px;
-    color: #fff
+	font-weight: bold;
+	margin-bottom: 40px;
+	padding-top: 40px;
+	color: #fff;
 }
 
-@media (max-width:767px) {
-    .lightbox-gallery h2 {
-        margin-bottom: 25px;
-        padding-top: 25px;
-        font-size: 24px
-    }
+@media (max-width: 767px) {
+	.lightbox-gallery h2 {
+		margin-bottom: 25px;
+		padding-top: 25px;
+		font-size: 24px;
+	}
 }
 
 .lightbox-gallery .intro {
-    font-size: 16px;
-    max-width: 500px;
-    margin: 0 auto 40px
+	font-size: 16px;
+	max-width: 500px;
+	margin: 0 auto 40px;
 }
 
 .lightbox-gallery .intro p {
-    margin-bottom: 0
-}
-
-.lightbox-gallery .photos {
-    padding-bottom: 20px
+	margin-bottom: 0;
 }
 
 .lightbox-gallery .item {
-    padding-bottom: 30px;
+	padding: 5px;
 	margin: 2em;
 	box-shadow: 0 0 15px rgba(255, 254, 254, 0.911) !important;
-
-
-
 }
 
-.form-card.photo-gallery{
-	padding: 3em !important;
+.photo-header-link a {
+	text-decoration: none;
+	color: white;
+	&:hover {
+		color: whitesmoke;
+	}
+}
+
+.photo-header-link i {
+	text-decoration: none;
+	color: white;
+	&:hover {
+		color: whitesmoke;
+		transform: scale(1.3);
+	}
+}
+
+.form-card-album {
+	background-color: rgb(29, 80, 99);
+    margin-bottom: 1.5em;
+	border-radius: 25px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
