@@ -24,6 +24,7 @@ class RemindersController < ApplicationController
     @reminder.user = current_user
 
     if @reminder.save
+      @reminder.update(reminder_params)
       redirect_to reminders_path
     else
       render :new
